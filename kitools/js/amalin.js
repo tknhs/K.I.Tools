@@ -5,6 +5,16 @@
  *
  **/
 
+chrome.storage.local.get(function(items){
+  var general = (items.general === undefined) ? new Array(false, false): items.general;
+  if(general[1]){
+    var nw = '';
+    var prf = location.href + location.search;
+    AmazonLinkit(prf, nw);
+  }
+});
+
+
 function AmazonLinkit(prf, nw){
   if (prf == nw){
     nw = location.href + location.search;
@@ -119,8 +129,4 @@ function request(isbn, lc, whichreq, repeat, srch){
   }
   xhr.send();
 }
-
-var nw = '';
-var prf = location.href + location.search;
-AmazonLinkit(prf, nw);
 

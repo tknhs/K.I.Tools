@@ -5,23 +5,59 @@
   <link href='css/options.css' rel='stylesheet' type='text/css'>
 </head>
 <body>
-  <h1>Setting</h1>
-  <fieldset id='registered'>
-    <legend>Registered?</legend>
-  </fieldset>
-  <br>
-  <fieldset>
-    <legend>Register or Change</legend>
-    <label for='kit-id'>ID : </label>
-    <input type='text' id='kit-id' name='kit-id' placeholder='1234567'>
-    <br>
-    <label for='kit-pass'>Password : </label>
-    <input type='password' id='kit-pass' name='kit-pass' placeholder='h030519'>
-    <br>
-    <label></label>
-    <button id='save'>Save</button>
-    <button id='delete'>Delete</button>
-  </fieldset>
+  <h1>Settings</h1>
+  <div id='tab_menu'>
+    <ul class='tab clear'>
+      <li><a href='#general' class='red' id='tab_general'>General</a></li>
+      <li><a href='#portal' class='green' id='tab_portal'>Portal</a></li>
+      <li><a href='#amalin' class='yellow' id='tab_amalin'>AmaLin</a></li>
+    </ul>
+  </div>
+  <div id='tab_content' class='tab_content'>
+    <!-- Tab General-->
+    <div id='general' class='page'>
+      <fieldset>
+        <legend>Enable / Disable</legend>
+        <br>
+        <label for='edportal'>Portal : </label>
+        <input type='checkbox' name='edportal' id='edportal'>
+        <br>
+        <label for='edamalin'>AmaLin : </label>
+        <input type='checkbox' name='edamalin' id='edamalin'>
+        <br>
+        <label></label>
+        <button id='general_save'>Save</button>
+        <button id='general_delete'>Reset</button>
+      </fieldset>
+    </div>
+
+    <!-- Tab Portal -->
+    <div id='portal' class='page'>
+      <fieldset id='registered'>
+        <legend>Registered?</legend>
+        <p id='regist'></p>
+      </fieldset>
+      <br>
+      <fieldset>
+        <legend>Register or Change</legend>
+        <br>
+        <label for='kit-id'>ID : </label>
+        <input type='text' id='kit-id' name='kit-id' placeholder='1234567'>
+        <br>
+        <label for='kit-pass'>Password : </label>
+        <input type='password' id='kit-pass' name='kit-pass' placeholder='h030519'>
+        <br>
+        <label></label>
+        <button id='portal_save'>Save</button>
+        <button id='portal_delete'>Delete</button>
+      </fieldset>
+    </div>
+
+    <!-- Tab AmaLin -->
+    <div id='amalin' class='page'>
+    </div>
+  </div>
+
   <script src='js/cryptico.min.js'></script>
   <script src='js/options.js'></script>
 </body>

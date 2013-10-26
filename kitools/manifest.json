@@ -1,10 +1,9 @@
 {
     "name": "K.I.Tools",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "manifest_version": 2,
 
     "description": "KIT学生にとって便利なツールを提供します",
-    /*"update_url": "https://raw.github.com/tknhs/AmaLin/master/AmaLin.chromeextension/updates.xml",*/
     "homepage_url": "http://kit-shuttle-bus.appspot.com",
 
     "permissions": [
