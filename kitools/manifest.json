@@ -1,0 +1,41 @@
+{
+    "name": "K.I.Tools",
+    "version": "0.0.1",
+    "manifest_version": 2,
+
+    "description": "KIT学生にとって便利なツールを提供します",
+    /*"update_url": "https://raw.github.com/tknhs/AmaLin/master/AmaLin.chromeextension/updates.xml",*/
+    "homepage_url": "http://kit-shuttle-bus.appspot.com",
+
+    "permissions": [
+      "storage",
+      "http://portal10.mars.kanazawa-it.ac.jp/portal/student",
+      "http://www.amazon.co.jp/",
+      "http://linkit.kanazawa-it.ac.jp/"
+    ],
+
+    "content_scripts": [
+      {
+        // 学生ポータル
+        "matches": [
+          "http://portal10.mars.kanazawa-it.ac.jp/portal/student"
+        ],
+        "js": ["js/cryptico.min.js","js/portal.js"],
+        "run_at": "document_end"
+      },{
+        // Amazon.co.jp with LINKIT-II
+        "matches": [
+          "http://www.amazon.co.jp/*/dp/*",
+          "http://www.amazon.co.jp/dp/*",
+          "http://www.amazon.co.jp/gp/product/*",
+          "http://www.amazon.co.jp/s*",
+          "http://www.amazon.co.jp/exec/*"
+        ],
+        "js": ["js/jquery.min.js", "js/amalin.js"],
+        "css": ["css/amalin.css"],
+        "run_at": "document_end"
+      }
+    ],
+
+    "options_page": "options.html"
+}
