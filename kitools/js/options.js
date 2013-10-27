@@ -1,6 +1,6 @@
 /**
  *
- *  Title  : KITools
+ *  Title  : K.I.Tools
  *  Author : tknhs
  *
  **/
@@ -11,7 +11,7 @@
 // 設定削除
 document.getElementById('general_delete').onclick = function(){
   chrome.storage.local.remove('general');
-  registTools();
+  registerTools();
 }
 // ローカルストレージに保存
 document.getElementById('general_save').onclick = function(){
@@ -21,7 +21,7 @@ document.getElementById('general_save').onclick = function(){
   general.push(gPortal);
   general.push(gAmalin);
   chrome.storage.local.set({'general':general});
-  registTools();
+  registerTools();
 }
 
 /**
@@ -30,7 +30,7 @@ document.getElementById('general_save').onclick = function(){
 // 設定削除
 document.getElementById('portal_delete').onclick = function(){
   chrome.storage.local.remove('portal');
-  registTools();
+  registerTools();
 }
 // ローカルストレージに保存
 document.getElementById('portal_save').onclick = function(){
@@ -40,15 +40,15 @@ document.getElementById('portal_save').onclick = function(){
   portal.push(enc(id));
   portal.push(enc(pass));
   chrome.storage.local.set({'portal':portal});
-  registTools();
+  registerTools();
 }
 
 /**
  *  その他
  **/
 // 情報を登録しているか
-document.body.onload = registTools();
-function registTools(){
+document.body.onload = registerTools();
+function registerTools(){
   chrome.storage.local.get(function(items){
     // General
     var general = (items.general === undefined) ? new Array(false, false): items.general;
@@ -56,8 +56,8 @@ function registTools(){
     document.getElementById('edamalin').checked = general[1];
     // Portal
     var portal = items.portal;
-    var regist = document.getElementById('regist');
-    regist.innerHTML = (portal === undefined) ? 'No' : 'Yes';
+    var register = document.getElementById('bregistered');
+    register.innerHTML = (portal === undefined) ? 'No' : 'Yes';
   });
 }
 
@@ -65,10 +65,10 @@ function registTools(){
 function enc(text){
   var PassPhrase = 'kit student portal';
   var Bits = 512;
-  var MattsRSAkey = cryptico.generateRSAKey(PassPhrase, Bits);
-  var MattsPublicKeyString = cryptico.publicKeyString(MattsRSAkey);
+  var RSAkey = cryptico.generateRSAKey(PassPhrase, Bits);
+  var PublicKeyString = cryptico.publicKeyString(RSAkey);
   var PlainText = text;
-  var EncryptionResult = cryptico.encrypt(PlainText, MattsPublicKeyString);
+  var EncryptionResult = cryptico.encrypt(PlainText, PublicKeyString);
   return EncryptionResult.cipher;
 }
 
@@ -78,7 +78,7 @@ function enc(text){
   var content = document.getElementById('tab_content');
   var menus = menu.getElementsByTagName('a');
   var current;
-  for (var i = 0, l = menus.length;i < l; i++){
+  for (var i=0; i<menus.length; i++){
     tab_init(menus[i], i);
   }
   function tab_init(link, index){

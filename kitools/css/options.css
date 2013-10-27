@@ -6,6 +6,7 @@
  **/
 
 body {
+  font-family: 'メイリオ', Meiryo, sans-serif;
   padding: 10px 50px;
 }
 
@@ -25,6 +26,12 @@ br {
 
 fieldset {
   width: 450px;
+}
+fieldset.field_general{
+  width: 550px;
+}
+fieldset.field_portal label{
+  padding-left: 30px;
 }
 
 #registered p {

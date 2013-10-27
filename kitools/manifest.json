@@ -1,14 +1,22 @@
 {
     "name": "K.I.Tools",
-    "version": "0.0.2",
+    "version": "1.0.0",
     "manifest_version": 2,
 
     "description": "KIT学生にとって便利なツールを提供します",
+    "update_url": "https://github.com/tknhs/K.I.Tools/master/kitools/updates.xml",
     "homepage_url": "http://kit-shuttle-bus.appspot.com",
+    "icons": {
+      "16": "icon/icon16.png",
+      "48": "icon/icon48.png",
+      "128": "icon/icon128.png"
+    },
+    "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
 
     "permissions": [
       "storage",
       "http://portal10.mars.kanazawa-it.ac.jp/portal/student",
+      "https://ras.kanazawa-it.ac.jp/",
       "http://www.amazon.co.jp/",
       "http://linkit.kanazawa-it.ac.jp/"
     ],
@@ -17,7 +25,8 @@
       {
         // 学生ポータル
         "matches": [
-          "http://portal10.mars.kanazawa-it.ac.jp/portal/student"
+          "http://portal10.mars.kanazawa-it.ac.jp/portal/student",
+          "https://ras.kanazawa-it.ac.jp/portal/,DanaInfo=portal10.mars.kanazawa-it.ac.jp+student"
         ],
         "js": ["js/cryptico.min.js","js/portal.js"],
         "run_at": "document_end"
@@ -35,6 +44,13 @@
         "run_at": "document_end"
       }
     ],
+
+    "background": {
+      "scripts": [
+        "js/analytics.js"
+      ],
+      "persistent": false
+    },
 
     "options_page": "options.html"
 }

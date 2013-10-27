@@ -10,20 +10,21 @@
     <ul class='tab clear'>
       <li><a href='#general' class='red' id='tab_general'>General</a></li>
       <li><a href='#portal' class='green' id='tab_portal'>Portal</a></li>
-      <li><a href='#amalin' class='yellow' id='tab_amalin'>AmaLin</a></li>
     </ul>
   </div>
   <div id='tab_content' class='tab_content'>
     <!-- Tab General-->
     <div id='general' class='page'>
-      <fieldset>
+      <fieldset class='field_general'>
         <legend>Enable / Disable</legend>
         <br>
         <label for='edportal'>Portal : </label>
         <input type='checkbox' name='edportal' id='edportal'>
+        <small>※ auto login to Student Portal.</small>
         <br>
         <label for='edamalin'>AmaLin : </label>
         <input type='checkbox' name='edamalin' id='edamalin'>
+        <small>※ display to Amazon.co.jp whether or not LC has holding.</small>
         <br>
         <label></label>
         <button id='general_save'>Save</button>
@@ -35,13 +36,13 @@
     <div id='portal' class='page'>
       <fieldset id='registered'>
         <legend>Registered?</legend>
-        <p id='regist'></p>
+        <p id='bregistered'></p>
       </fieldset>
       <br>
-      <fieldset>
+      <fieldset class='field_portal'>
         <legend>Register or Change</legend>
         <br>
-        <label for='kit-id'>ID : </label>
+        <label for='kit-id'>Student ID : </label>
         <input type='text' id='kit-id' name='kit-id' placeholder='1234567'>
         <br>
         <label for='kit-pass'>Password : </label>
@@ -51,10 +52,6 @@
         <button id='portal_save'>Save</button>
         <button id='portal_delete'>Delete</button>
       </fieldset>
-    </div>
-
-    <!-- Tab AmaLin -->
-    <div id='amalin' class='page'>
     </div>
   </div>
 

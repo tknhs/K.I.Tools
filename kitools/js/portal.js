@@ -36,8 +36,8 @@ function loginPortal(){
 function dec(text){
   var PassPhrase = 'kit student portal';
   var Bits = 512;
-  var MattsRSAkey = cryptico.generateRSAKey(PassPhrase, Bits);
-  var DecryptionResult = cryptico.decrypt(text, MattsRSAkey);
+  var RSAkey = cryptico.generateRSAKey(PassPhrase, Bits);
+  var DecryptionResult = cryptico.decrypt(text, RSAkey);
   return DecryptionResult.plaintext;
 }
 
