@@ -30,11 +30,11 @@ fieldset {
 fieldset.field_general{
   width: 550px;
 }
-fieldset.field_portal label{
+fieldset.field_portal label, fieldset.field_vpn label{
   padding-left: 30px;
 }
 
-#registered p {
+.registered p {
   text-align: center;
 }
 

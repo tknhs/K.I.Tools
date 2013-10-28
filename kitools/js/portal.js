@@ -5,21 +5,39 @@
  *
  **/
 
+var vpn_srch = 'https://ras.kanazawa-it.ac.jp/dana-na/auth/url_default/welcome.cgi'
+if (location.href == vpn_srch){
+  check('vpn');
+}
 if (document.getElementsByTagName('font')[0].innerHTML != '学籍番号またはパスワードが違います。'){
-  portal();
+  check('sp');
 }
 
 // 有効無効チェック
-function portal(){
+function check(request){
+  var _request = request;
   chrome.storage.local.get(function(items){
-    var general = (items.general === undefined) ? new Array(false, false): items.general;
-    if(general[0]){
+    var general = (items.general === undefined) ? new Array(false, false, false): items.general;
+    if (_request == 'sp' && general[0]){
       loginPortal();
+    }
+    if (_request == 'vpn' && general[2]){
+      loginVPN();
     }
   });
 }
 
-// ログインページ
+// VPNログインページ
+function loginVPN(){
+  chrome.storage.local.get(function(items){
+    document.getElementById('username_5').value = dec(items.vpn[0]);
+    document.getElementById('password_5').value = dec(items.vpn[1]);
+    document.getElementById('realm_17').value = dec(items.vpn[2]);
+    document.getElementById('btnSubmit_6').click();
+  });
+}
+
+// 学生ポータルログインページ
 function loginPortal(){
   var id = document.getElementsByName('uid')[0];
   var pass = document.getElementsByName('pw')[0];

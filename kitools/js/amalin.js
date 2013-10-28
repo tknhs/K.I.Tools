@@ -6,7 +6,7 @@
  **/
 
 chrome.storage.local.get(function(items){
-  var general = (items.general === undefined) ? new Array(false, false): items.general;
+  var general = (items.general === undefined) ? new Array(false, false, false): items.general;
   if(general[1]){
     var nw = '';
     var prf = location.href + location.search;
