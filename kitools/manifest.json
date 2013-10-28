@@ -1,10 +1,10 @@
 {
     "name": "K.I.Tools",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "manifest_version": 2,
 
     "description": "KIT学生にとって便利なツールを提供します",
-    "update_url": "https://github.com/tknhs/K.I.Tools/master/kitools/updates.xml",
+    "update_url": "https://raw.github.com/tknhs/K.I.Tools/master/kitools/updates.xml",
     "homepage_url": "http://kit-shuttle-bus.appspot.com",
     "icons": {
       "16": "icon/icon16.png",
