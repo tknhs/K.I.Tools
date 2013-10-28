@@ -8,3 +8,8 @@ _gaq.push(['_trackPageview']);
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
 })();
 
+chrome.storage.local.get(function(items){
+  if (items.general === undefined){
+    chrome.storage.local.set({'general': new Array(false, true, false)});
+  }
+});
