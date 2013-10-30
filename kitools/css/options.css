@@ -37,6 +37,14 @@ fieldset.field_portal label, fieldset.field_vpn label{
 .registered p {
   text-align: center;
 }
+.registered p.red {
+  color: #cc0000;
+  font-weight: bold;
+}
+#g_registered {
+  padding-left: 40px;
+  color: #cc0000;
+}
 
 /* タブ */
 .tab_content {
@@ -59,14 +67,13 @@ ul.tab li {
 }
 ul.tab li.none {
   border-bottom: 2px #fff solid;
-  font-weight: bold;
+  background: #eee;
 }
 ul.tab li a {
   color: #000;
   display: block;
   padding: 3px 10px 5px;
   text-decoration: none;
-  background: #fff;
 }
 ul.tab li a.green {
   border-top: 5px #4cbb47 solid;
@@ -76,10 +83,6 @@ ul.tab li a.red {
 }
 ul.tab li a.yellow {
   border-top: 5px #ffd242 solid;
-}
-ul.tab li a:hover {
-  position: relative;
-  bottom: 6px;
 }
 /* clerfix */
 .clear:after {

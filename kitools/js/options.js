@@ -23,6 +23,8 @@ document.getElementById('general_save').onclick = function(){
   general.push(gAmalin);
   general.push(gVpn);
   chrome.storage.local.set({'general':general});
+  var g_register = document.getElementById('g_registered');
+  g_register.innerHTML = 'Updated!';
   registerTools();
 }
 
@@ -86,11 +88,25 @@ function registerTools(){
     // Portal
     var portal = items.portal;
     var p_register = document.getElementById('p_registered');
-    p_register.innerHTML = (portal === undefined) ? 'No' : 'Yes';
+    if (portal === undefined){
+      p_register.innerHTML = 'No';
+      p_register.className = 'red';
+    }
+    else{
+      p_register.innerHTML = 'Yes';
+      p_register.className = '';
+    }
     // VPN
     var vpn = items.vpn;
     var v_register = document.getElementById('v_registered');
-    v_register.innerHTML = (vpn == undefined) ? 'No' : 'Yes';
+    if (vpn === undefined){
+      v_register.innerHTML = 'No';
+      v_register.className = 'red';
+    }
+    else{
+      v_register.innerHTML = 'Yes';
+      v_register.className = '';
+    }
   });
 }
 
