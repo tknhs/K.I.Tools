@@ -1,0 +1,19 @@
+body {
+  min-width: 250px;
+  font-family: 'メイリオ', Meiryo, sans-serif;
+  margin: 20px;
+}
+
+.kit-calendar:hover {
+  background-color: #e0e0e0;
+}
+
+.kit-calendar {
+  border: 1px solid transparent;
+  border-radius: 2px;
+  display:inline;
+  padding: 2px 4px;
+  font-size: 100%;
+  background-color: #f0f0f0;
+  width: 250px;
+}
