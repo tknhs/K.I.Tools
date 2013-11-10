@@ -5,7 +5,11 @@ body {
 }
 
 .kit-calendar:hover {
-  background-color: #e0e0e0;
+  background-color: #d0d0d0;
+}
+
+.kit-calendar:active {
+  background-color: #a0a0a0;
 }
 
 .kit-calendar {
@@ -16,4 +20,9 @@ body {
   font-size: 100%;
   background-color: #f0f0f0;
   width: 250px;
+}
+
+.event {
+  font-size: 75%;
+  margin-bottom: -5px;
 }
