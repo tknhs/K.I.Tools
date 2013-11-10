@@ -5,11 +5,11 @@
   <link href='css/options.css' rel='stylesheet' type='text/css'>
 </head>
 <body>
-  <h1>Settings</h1>
+  <h1>設定</h1>
   <div id='tab_menu'>
     <ul class='tab clear'>
-      <li><a href='#general' class='red' id='tab_general'>General</a></li>
-      <li><a href='#portal' class='green' id='tab_portal'>Portal</a></li>
+      <li><a href='#general' class='red' id='tab_general'>一般</a></li>
+      <li><a href='#portal' class='green' id='tab_portal'>ポータル</a></li>
       <li><a href='#vpn' class='yellow' id='tab_vpn'>VPN</a></li>
     </ul>
   </div>
@@ -17,23 +17,23 @@
     <!-- Tab General-->
     <div id='general' class='page'>
       <fieldset class='field_general'>
-        <legend>Enable / Disable</legend>
+        <legend>有効化 / 無効化</legend>
         <br>
         <label for='edportal'>Portal : </label>
         <input type='checkbox' name='edportal' id='edportal'>
-        <small>※ auto login to Student Portal.</small>
+        <small>※ 学生ポータルに自動ログイン</small>
         <br>
         <label for='edamalin'>AmaLin : </label>
         <input type='checkbox' name='edamalin' id='edamalin'>
-        <small>※ display to Amazon.co.jp whether or not LC has holding.</small>
+        <small>※ LCの書籍所蔵状況を Amazon.co.jp に表示</small>
         <br>
         <label for='edvpn'>VPN : </label>
         <input type='checkbox' name='edvpn' id='edvpn'>
-        <small>※ auto login to VPN</small>
+        <small>※ VPN に自動ログイン</small>
         <br>
         <label></label>
-        <button id='general_save'>Save</button>
-        <button id='general_delete' disabled='disbaled'>Reset</button>
+        <button id='general_save'>保存</button>
+        <button id='general_delete' disabled='disbaled'>リセット</button>
         <b id='g_registered'></b>
       </fieldset>
     </div>
@@ -41,53 +41,51 @@
     <!-- Tab Portal -->
     <div id='portal' class='page'>
       <fieldset class='registered'>
-        <legend>Registered?</legend>
+        <legend>登録状況</legend>
         <p id='p_registered'></p>
       </fieldset>
       <br>
       <fieldset class='field_portal'>
-        <legend>Register or Change</legend>
+        <legend>登録 / 変更</legend>
         <br>
-        <label for='kit-id'>Student ID : </label>
+        <label for='kit-id'>学籍番号 : </label>
         <input type='text' id='kit-id' name='kit-id' placeholder='1234567'>
         <br>
-        <label for='kit-pass'>Password : </label>
+        <label for='kit-pass'>パスワード : </label>
         <input type='password' id='kit-pass' name='kit-pass' placeholder='h030519'>
         <br>
         <label></label>
-        <button id='portal_save'>Save</button>
-        <button id='portal_delete'>Delete</button>
+        <button id='portal_save'>保存</button>
+        <button id='portal_delete'>削除</button>
       </fieldset>
     </div>
 
     <!-- Tab VPN -->
     <div id='vpn' class='page'>
       <fieldset class='registered'>
-        <legend>Registered?</legend>
+        <legend>登録状況</legend>
         <p id='v_registered'></p>
       </fieldset>
       <br>
       <fieldset class='field_vpn'>
-        <legend>Register or Change</legend>
+        <legend>登録 / 変更</legend>
         <br>
-        <label for='vpn-id'>User ID : </label>
+        <label for='vpn-id'>ユーザ ID : </label>
         <input type='text' id='vpn-id' name='vpn-id' placeholder='a1234567'>
         <br>
-        <label for='vpn-pass'>Password : </label>
+        <label for='vpn-pass'>パスワード : </label>
         <input type='password' id='vpn-pass' name='vpn-pass' placeholder='h030519'>
         <br>
-        <label for='vpn-mode'>Mode : </label>
+        <label for='vpn-mode'>モード : </label>
         <input type='radio' name='vpn-radio' value='Web' checked><small>Web</small>
         <input type='radio' name='vpn-radio' value='NetworkConnect'><small>NetworkConnect</small>
         <br>
         <label></label>
-        <button id='vpn_save'>Save</button>
-        <button id='vpn_delete'>Delete</button>
+        <button id='vpn_save'>保存</button>
+        <button id='vpn_delete'>削除</button>
       </fieldset>
     </div>
   </div>
-
-
 
   <script src='js/cryptico.min.js'></script>
   <script src='js/options.js'></script>

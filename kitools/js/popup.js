@@ -16,9 +16,10 @@ document.getElementById('kit-calendar').addEventListener('click', checkAuth);
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
 })();
 
-// 開発，本番
+// 開発, GitHub, Web Store
 var extension_id = ['chrome-extension://aaalhnakaggieflacdaljhkhkdcolffl/popup.html',
-                    'chrome-extension://kkmfijnemlnjbgagaimbmjehbalboboj/popup.html'];
+                    'chrome-extension://kkmfijnemlnjbgagaimbmjehbalboboj/popup.html',
+                    'chrome-extension://hocoofagklejikikimldhhnjmdnkfpmh/popup.html'];
 if (location.href == extension_id[0]) {
   var clientId = '547277357116-d713cd7354e0vp2t95ov6v90add2l53o.apps.googleusercontent.com';
   var apiKey = 'AIzaSyAHlxBfNe32oSU96a1DRm--B_oN831VsTI';
@@ -26,6 +27,10 @@ if (location.href == extension_id[0]) {
 else if (location.href == extension_id[1]) {
   var clientId = '547277357116-2mgn78slmefbl7rom72p7ojk061aerh8.apps.googleusercontent.com';
   var apiKey = 'AIzaSyBp6lIL5YWCAuto1Q-J57eYWHvyOgeNzrc';
+}
+else if (location.href == extension_id[2]) {
+  var clientId = '547277357116-aejaf5d8qggolfhqr4unq8b3up2mmsj6.apps.googleusercontent.com';
+  var apiKey = 'AIzaSyDsu5AVGBuD3PKa6HLE6-mVf7THKzEspPA';
 }
 var scopes = 'https://www.googleapis.com/auth/calendar';
 

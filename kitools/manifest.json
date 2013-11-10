@@ -1,6 +1,6 @@
 {
     "name": "K.I.Tools",
-    "version": "1.2.0",
+    "version": "1.2.2",
     "manifest_version": 2,
 
     "description": "KIT学生にとって便利なツールを提供します",
@@ -24,7 +24,6 @@
 
     "content_scripts": [
       {
-        // 学生ポータル
         "matches": [
           "http://portal10.mars.kanazawa-it.ac.jp/sysportal/StudentLogin?SYS=estimate",
           "http://portal10.mars.kanazawa-it.ac.jp/portal/student",
@@ -34,7 +33,6 @@
         "js": ["js/cryptico.min.js","js/portal.js"],
         "run_at": "document_end"
       },{
-        // Amazon.co.jp with LINKIT-II
         "matches": [
           "http://www.amazon.co.jp/*/dp/*",
           "http://www.amazon.co.jp/dp/*",
@@ -46,7 +44,6 @@
         "css": ["css/amalin.css"],
         "run_at": "document_end"
       },{
-        // Google Calendar Authorization Page
         "matches": [
           "https://accounts.google.com/o/oauth2/*"
         ],

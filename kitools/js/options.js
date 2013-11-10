@@ -89,22 +89,22 @@ function registerTools(){
     var portal = items.portal;
     var p_register = document.getElementById('p_registered');
     if (portal === undefined){
-      p_register.innerHTML = 'No';
+      p_register.innerHTML = '未登録';
       p_register.className = 'red';
     }
     else{
-      p_register.innerHTML = 'Yes';
+      p_register.innerHTML = '登録済';
       p_register.className = '';
     }
     // VPN
     var vpn = items.vpn;
     var v_register = document.getElementById('v_registered');
     if (vpn === undefined){
-      v_register.innerHTML = 'No';
+      v_register.innerHTML = '未登録';
       v_register.className = 'red';
     }
     else{
-      v_register.innerHTML = 'Yes';
+      v_register.innerHTML = '登録済';
       v_register.className = '';
     }
   });
