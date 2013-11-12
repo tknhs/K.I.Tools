@@ -1,7 +1,8 @@
 {
     "name": "K.I.Tools",
-    "version": "1.2.2",
+    "version": "1.2.3",
     "manifest_version": 2,
+    "minimum_chrome_version": "22",
 
     "description": "KIT学生にとって便利なツールを提供します",
     "update_url": "https://raw.github.com/tknhs/K.I.Tools/master/kitools/updates.xml",
