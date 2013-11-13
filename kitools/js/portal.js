@@ -5,11 +5,12 @@
  *
  **/
 
-var vpn_srch = 'https://ras.kanazawa-it.ac.jp/dana-na/auth/url_default/welcome.cgi'
+var vpn_srch = 'https://ras.kanazawa-it.ac.jp/dana-na/auth/url_default/welcome.cgi';
 if (location.href == vpn_srch){
   check('vpn');
 }
-if (document.getElementsByTagName('font')[0].innerHTML != '学籍番号またはパスワードが違います。'){
+if (document.getElementsByTagName('font')[0].innerHTML != '学籍番号またはパスワードが違います。' &&
+    document.getElementsByClassName('button').length == 0){
   check('sp');
 }
 
@@ -37,7 +38,7 @@ function loginVPN(){
   });
 }
 
-// 学生ポータルログインページ
+// 学生ポータル, 給与明細, 購買ワークフローログインページ
 function loginPortal(){
   var id = document.getElementsByName('uid')[0];
   var pass = document.getElementsByName('pw')[0];

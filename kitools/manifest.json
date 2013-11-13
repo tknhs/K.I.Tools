@@ -1,6 +1,6 @@
 {
     "name": "K.I.Tools",
-    "version": "1.2.3",
+    "version": "1.2.4",
     "manifest_version": 2,
     "minimum_chrome_version": "22",
 
@@ -18,14 +18,13 @@
       "storage",
       "tabs",
       "http://portal10.mars.kanazawa-it.ac.jp/",
-      "https://ras.kanazawa-it.ac.jp/",
-      "http://www.amazon.co.jp/",
-      "http://linkit.kanazawa-it.ac.jp/"
+      "https://ras.kanazawa-it.ac.jp/"
     ],
 
     "content_scripts": [
       {
         "matches": [
+          "http://mars10.mars.kanazawa-it.ac.jp/kyuyo/student",
           "http://portal10.mars.kanazawa-it.ac.jp/sysportal/StudentLogin?SYS=estimate",
           "http://portal10.mars.kanazawa-it.ac.jp/portal/student",
           "https://ras.kanazawa-it.ac.jp/portal/,DanaInfo=portal10.mars.kanazawa-it.ac.jp+student",
@@ -39,7 +38,8 @@
           "http://www.amazon.co.jp/dp/*",
           "http://www.amazon.co.jp/gp/product/*",
           "http://www.amazon.co.jp/s*",
-          "http://www.amazon.co.jp/exec/*"
+          "http://www.amazon.co.jp/exec/*",
+          "http://linkit.kanazawa-it.ac.jp/*"
         ],
         "js": ["js/jquery.min.js", "js/amalin.js"],
         "css": ["css/amalin.css"],
