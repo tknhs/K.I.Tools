@@ -18,10 +18,12 @@ document.getElementById('general_save').onclick = function(){
   var gPortal = document.getElementById('edportal').checked;
   var gAmalin = document.getElementById('edamalin').checked;
   var gVpn = document.getElementById('edvpn').checked;
+  var gBus = document.getElementById('edbus').checked;
   var general = new Array();
   general.push(gPortal);
   general.push(gAmalin);
   general.push(gVpn);
+  general.push(gBus);
   chrome.storage.local.set({'general':general});
   var g_register = document.getElementById('g_registered');
   g_register.innerHTML = 'Updated!';
@@ -81,10 +83,16 @@ document.body.onload = registerTools();
 function registerTools(){
   chrome.storage.local.get(function(items){
     // General
-    var general = (items.general === undefined) ? new Array(false, false, false): items.general;
+    var general = items.general;
+    for (var i=0; i<general.length; i++){
+      if (general[i] == undefined){
+        general[i] = false;
+      }
+    }
     document.getElementById('edportal').checked = general[0];
     document.getElementById('edamalin').checked = general[1];
     document.getElementById('edvpn').checked = general[2];
+    document.getElementById('edbus').checked = general[3];
     // Portal
     var portal = items.portal;
     var p_register = document.getElementById('p_registered');
