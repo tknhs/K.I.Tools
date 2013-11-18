@@ -42,7 +42,13 @@ chrome.extension.onMessage.addListener(function(req, sender, callback) {
         // 位置情報
         var latitude = pos.coords.latitude;
         var longitude = pos.coords.longitude;
-        var my_location = (latitude<36.497 && longitude<136.582) ? '八束穂→扇が丘' : '扇が丘→八束穂';
+        if (latitude<36.497 && longitude<136.582) {
+          var my_location = '八束穂→扇が丘';
+          var my_img = '../icon/bus1.png';
+        } else {
+          var my_location = '扇が丘→八束穂';
+          var my_img = '../icon/bus2.png';
+        }
         var my_day = (week_holi == 6) ? '土曜' : '平日';
         var bus = timetable[my_day][my_location];
         for (var i=0; i<bus.length; i++){
@@ -50,13 +56,16 @@ chrome.extension.onMessage.addListener(function(req, sender, callback) {
           var bus_time = Number(bus_min[0])*60 + Number(bus_min[1]);
           if (bus_time - time == 10) {
             // 通知
+            var audio = new Audio("../sound/Crrect_answer3.mp3");
+            audio.volume = 0.1;
             var notify = webkitNotifications.createNotification(
-              '../icon/icon128.png',
+              my_img,
               my_location,
-              '出発10分前です\n出発時刻: ' + bus[i][1] + ' 到着時刻: ' + bus[i][4]
+              '10分前 | 出発: ' + bus[i][1] + ' 到着: ' + bus[i][4]
             );
+            audio.play();
             notify.show();
-            //setTimeout(function(){ notify.cancel(); },5000);
+            setTimeout(function(){ notify.cancel(); }, 10*1000);
             break;
           }
         }
