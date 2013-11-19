@@ -1,6 +1,6 @@
 {
     "name": "K.I.Tools",
-    "version": "1.2.4",
+    "version": "1.3.0",
     "manifest_version": 2,
     "minimum_chrome_version": "22",
 
@@ -15,6 +15,8 @@
     "content_security_policy": "script-src 'self' https://ssl.google-analytics.com https://apis.google.com; object-src 'self'",
 
     "permissions": [
+      "notifications",
+      "geolocation",
       "storage",
       "tabs",
       "http://portal10.mars.kanazawa-it.ac.jp/",
@@ -50,6 +52,12 @@
         ],
         "js": ["js/gcalapi.js"],
         "run_at": "document_end"
+      },{
+        "matches": [
+          "*://*/*"
+        ],
+        "js": ["js/busnotify.js"],
+        "run_at": "document_start"
       }
     ],
 
