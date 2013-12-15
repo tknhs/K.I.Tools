@@ -56,7 +56,7 @@ chrome.extension.onMessage.addListener(function(req, sender, callback) {
           var bus_time = Number(bus_min[0])*60 + Number(bus_min[1]);
           if (bus_time - time == 10) {
             // 通知
-            var audio = new Audio("../sound/Crrect_answer3.mp3");
+            var audio = new Audio('../sound/Crrect_answer3.mp3');
             audio.volume = 0.1;
             var notify = webkitNotifications.createNotification(
               my_img,

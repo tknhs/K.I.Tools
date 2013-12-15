@@ -82,9 +82,9 @@ function get_data(xhr, req_num) {
     var line_split = str.split(/\n/g);
     var x_table = new Array();
     for (var i=0; i<line_split.length; i++) {
-      str_split = line_split[i].split(",");
+      str_split = line_split[i].split(',');
       str_split = str_split.filter(function (value, index, self) {
-        return (self[index] != "" && self[index] != '\r');
+        return (self[index] != '' && self[index] != '\r');
       });
       x_table.push(str_split);
     }

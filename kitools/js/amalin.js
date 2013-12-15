@@ -24,6 +24,7 @@ function AmazonLinkit(prf, nw){
     nw  = location.href + location.search;
     var local_url = location.pathname;
     var isbn;
+    var lc;
     var lc_url = 'http://linkit.kanazawa-it.ac.jp/opac/cgi/searchS.cgi?AC=1&SC=F&RI10=IB&SW10=';
 
     if (local_url.search('/(dp|gp|exec\/obidos\/ASIN)(\/product)?\/([0-9]+)(X)?') != -1){
@@ -32,7 +33,7 @@ function AmazonLinkit(prf, nw){
       lc = lc_url + isbn;
       request(isbn, lc, 0);
     }
-    if (local_url.search("(/s)[/|?]*") != -1){
+    if (local_url.search('(/s)[/|?]*') != -1){
       /* search results page */
       var sp = search_page();
       $.each(sp.id, function(i){
@@ -41,8 +42,30 @@ function AmazonLinkit(prf, nw){
         request(isbn, lc, 1, i, sp);
       });
     }
+    if (local_url.search('/gp/bestsellers/books/') != -1){
+      /* bestsellers page */
+      var isbns = bestsellers_page();
+      $.each(isbns, function(i){
+        isbn = isbns[i];
+        lc = lc_url + isbn;
+        if (isbn != '') request(isbn, lc, 2, i);
+      });
+    }
   }
   setTimeout(function(){ AmazonLinkit(prf, nw); }, 1500);
+}
+
+function bestsellers_page(){
+  var bestitems = document.getElementsByClassName('zg_itemRightDiv_normal');
+  var b_isbn = new Array();
+  for (var i=0; i<bestitems.length; i++){
+    if (bestitems[i].children[1].innerHTML.search('/dp/([0-9]+)(X)?') != -1){
+      b_isbn[i] = RegExp.$1 + RegExp.$2;
+    } else {
+      b_isbn[i] = '';
+    }
+  }
+  return b_isbn;
 }
 
 function search_page(){
@@ -116,14 +139,18 @@ function request(isbn, lc, whichreq, repeat, srch){
           affi.setAttribute('class', 'amalin-affi amalin-affi1');
           affi.innerHTML = '<a href='+ affi_url +' style="text-decoration: none;">アフィリエイトに協力する</a>';
         }
-        //$(affi).insertBefore('.parseasinTitle');
         $('.amalin').append(affi);
       }
-      else if(wr == 1){
+      else if (wr == 1){
         /* search result page */
         if ($('#'+sp.id[rep]).attr('name') == sp.isbn[rep]){
           $('#'+sp.id[rep]+' h3.newaps').append(ele);
         }
+      }
+      else if (wr == 2){
+        /* bestsellers page */
+        var parent_ele = document.getElementsByClassName('zg_itemRightDiv_normal')[rep];
+        parent_ele.insertBefore(ele, parent_ele.children[3]);
       }
     }
   }
