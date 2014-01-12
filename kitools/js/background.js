@@ -29,7 +29,21 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
   }
 });
 
-// 通知機能からの処理を受け取る
+// バスデータの更新
+chrome.storage.local.get(function(items) {
+  var date = new Date();
+  var year = String(date.getFullYear());
+  var month = String(Number(date.getMonth())+1);
+  month = (month.length == 1) ? '0' + month : month;
+  var day = String(date.getDate());
+  day = (day.length == 1) ? '0' + day : day;
+  var date_today = year + '/' + month + '/' + day;
+  if (items.bus_checked_date != date_today || items.bus_checked_date === undefined) {
+    bus_data.update_check(date_today);
+  }
+});
+
+// バス通知機能からの処理を受け取る
 chrome.extension.onMessage.addListener(function(req, sender, callback) {
   var week_holi = req.day;
   var timetable = req.timetable;

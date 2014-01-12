@@ -19,6 +19,7 @@
       "geolocation",
       "storage",
       "tabs",
+      "http://www.kanazawa-it.ac.jp/",
       "http://portal10.mars.kanazawa-it.ac.jp/",
       "https://ras.kanazawa-it.ac.jp/"
     ],
@@ -73,6 +74,7 @@
 
     "background": {
       "scripts": [
+        "js/busdata.js",
         "js/background.js"
       ],
       "persistent": false
