@@ -16,19 +16,6 @@ chrome.storage.local.get(function(items) {
   }
 });
 
-// ページアクションを表示
-chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
-  if (tab.url.indexOf('http://portal10.mars.kanazawa-it.ac.jp/portal/student') == 0 ||
-      tab.url.indexOf('https://ras.kanazawa-it.ac.jp/portal/,DanaInfo=portal10.mars.kanazawa-it.ac.jp+student') == 0) {
-    chrome.storage.local.get(function(items) {
-      // ポータルの自動ログインが有効
-      if (items.general[0]) {
-        chrome.pageAction.show(tabId);
-      }
-    });
-  }
-});
-
 // バスデータの更新
 chrome.storage.local.get(function(items) {
   var date = new Date();
