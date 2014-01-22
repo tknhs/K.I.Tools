@@ -57,7 +57,7 @@
         "matches": [
           "*://*/*"
         ],
-        "js": ["js/busnotify.js"],
+        "js": ["js/lib/getnowdate.js", "js/busnotify.js"],
         "run_at": "document_start"
       }
     ],
