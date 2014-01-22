@@ -92,6 +92,10 @@ function ins_bus_time(tt, wh, time) {
     }
   }
 
+  if (morethan0 == 0) {
+    document.getElementById('o2y_remain_time').innerText = '本日の運行は終了しています';
+  }
+
   // やつかほ→扇が丘のインサート処理
   var y2o = _tt[schedule[_wh]][termial[1]];
   var y2o_time = document.getElementById('y2o_time');
@@ -121,6 +125,10 @@ function ins_bus_time(tt, wh, time) {
       tr.appendChild(bus_remain);
       y2o_time.appendChild(tr);
     }
+  }
+
+  if (morethan0 == 0) {
+    document.getElementById('y2o_remain_time').innerText = '本日の運行は終了しています';
   }
 }
 
