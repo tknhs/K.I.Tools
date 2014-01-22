@@ -14,10 +14,8 @@ chrome.storage.local.get(function(items) {
     chrome.storage.local.set({'general': new Array(false, true, false, false)});
     chrome.tabs.create({url:'chrome-extension://' + chrome.runtime.id + '/options.html'});
   }
-});
 
-// バスデータの更新
-chrome.storage.local.get(function(items) {
+  // バスデータの更新
   var date = new Date();
   var year = String(date.getFullYear());
   var month = String(Number(date.getMonth())+1);
@@ -28,6 +26,11 @@ chrome.storage.local.get(function(items) {
   if (items.bus_checked_date != date_today || items.bus_checked_date === undefined) {
     bus_data.update_check(date_today);
   }
+
+  // 扇が丘・やつかほの分断位置を保存
+  if (localStorage['geo'] === undefined || JSON.parse(localStorage['geo']).version != '20130123') {
+    localStorage['geo'] = JSON.stringify({'version': '20130123', 'lat': 36.497, 'lon': 136.582});
+  }
 });
 
 // バス通知機能からの処理を受け取る
@@ -37,13 +40,14 @@ chrome.extension.onMessage.addListener(function(req, sender, callback) {
   var time = req.time;
   time = time.split(':');
   time = Number(time[0])*60 + Number(time[1]);
+  var geo = JSON.parse(localStorage['geo']);
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(
       function (pos) {
         // 位置情報
         var latitude = pos.coords.latitude;
         var longitude = pos.coords.longitude;
-        if (latitude<36.497 && longitude<136.582) {
+        if (latitude<geo.lat && longitude<geo.lon) {
           var my_location = '八束穂→扇が丘';
           var my_img = '../icon/bus1.png';
         } else {
