@@ -12,7 +12,7 @@ chrome.storage.local.get(function(items) {
         tab.url.indexOf('https://ras.kanazawa-it.ac.jp/portal/,DanaInfo=portal10.mars.kanazawa-it.ac.jp+student') == -1) {
       var cal = document.getElementById('kit-calendar');
       cal.disabled = true;
-      cal.innerText = 'ここではボタンは無効です';
+      cal.innerText = 'ポータルアクセス中に有効';
     }
   });
 
@@ -50,7 +50,9 @@ function ins_bus_time(tt, wh, time) {
   var _wh = wh;
   var _time = time;
   var schedule = ['平日', '土曜', '日曜'];
-  var termial = ['扇が丘→八束穂', '八束穂→扇が丘'];
+  var terminal = ['扇が丘→八束穂', '八束穂→扇が丘'];
+  var terminal_time = ['o2y_time', 'y2o_time'];
+  var terminal_remain_time = ['o2y_remain_time', 'y2o_remain_time'];
 
   // どの日程か
   var tc = document.getElementById('time_content');
@@ -60,75 +62,50 @@ function ins_bus_time(tt, wh, time) {
   tc.parentNode.insertBefore(p, tc);
 
   // 日曜日のときは何もしない
-  if (_wh == 2) return;
-
-  // 扇が丘→やつかほのインサート処理
-  var o2y = _tt[schedule[_wh]][termial[0]];
-  var o2y_time = document.getElementById('o2y_time');
-  var morethan0 = 0;
-  for (var i=0; i<o2y.length; i++) {
-    var bus_sm = o2y[i][1].split(':');
-    bus_sm = Number(bus_sm[0])*60 + Number(bus_sm[1]);
-    var now_sm = _time.split(':');
-    now_sm = Number(now_sm[0])*60 + Number(now_sm[1]);
-    
-    var remain_time = bus_sm - now_sm;
-    if (remain_time > 0) {
-      morethan0++;
-      if (morethan0 == 1) {
-        document.getElementById('o2y_remain_time').innerText = remain_time + ' 分';
-      }
-      var tr = document.createElement('tr');
-      var bus_name = document.createElement('td');
-      bus_name.innerText = o2y[i][0];
-      var bus_departure = document.createElement('td');
-      bus_departure.innerText = o2y[i][1];
-      var bus_remain = document.createElement('td');
-      bus_remain.innerText = remain_time;
-      tr.appendChild(bus_name);
-      tr.appendChild(bus_departure);
-      tr.appendChild(bus_remain);
-      o2y_time.appendChild(tr);
+  if (_wh == 2) {
+    for (var i=0; i<2; i+=1) {
+      document.getElementById(terminal_remain_time[i]).innerText = '本日は運休日です';
     }
+    return;
   }
 
-  if (morethan0 == 0) {
-    document.getElementById('o2y_remain_time').innerText = '本日の運行は終了しています';
-  }
-
-  // やつかほ→扇が丘のインサート処理
-  var y2o = _tt[schedule[_wh]][termial[1]];
-  var y2o_time = document.getElementById('y2o_time');
-  var morethan0 = 0;
-  for (var i=0; i<y2o.length; i++) {
-    var bus_sm = y2o[i][1].split(':');
-    bus_sm = Number(bus_sm[0])*60 + Number(bus_sm[1]);
-    var now_sm = _time.split(':');
-    now_sm = Number(now_sm[0])*60 + Number(now_sm[1]);
-    
-    var remain_time = bus_sm - now_sm;
-    if (remain_time > 0) {
-      morethan0++;
-      if (morethan0 == 1) {
-        document.getElementById('y2o_remain_time').innerText = remain_time + ' 分';
+  for (var two_way=0; two_way<2; two_way+=1) {
+    /*
+     * インサート処理
+     * 0: 扇が丘　→やつかほ
+     * 1: やつかほ→扇が丘
+     */
+    var building_id = (two_way === 0) ? 1 : (localStorage['bus_building'] === undefined) ? 1 : JSON.parse(localStorage['bus_building']);
+    var way = _tt[schedule[_wh]][terminal[two_way]];
+    var way_time = document.getElementById(terminal_time[two_way]);
+    var bus_end = 0;
+    for (var i=0; i<way.length; i++) {
+      var bus_sm = way[i][building_id].split(':');
+      bus_sm = Number(bus_sm[0])*60 + Number(bus_sm[1]);
+      var now_sm = _time.split(':');
+      now_sm = Number(now_sm[0])*60 + Number(now_sm[1]);
+      var remain_time = bus_sm - now_sm;
+      if (remain_time > 0) {
+        bus_end+=1;
+        if (bus_end == 1) {
+          document.getElementById(terminal_remain_time[two_way]).innerText = remain_time + ' 分';
+        }
+        var tr = document.createElement('tr');
+        var bus_name = document.createElement('td');
+        bus_name.innerText = way[i][0];
+        var bus_departure = document.createElement('td');
+        bus_departure.innerText = way[i][building_id];
+        var bus_remain = document.createElement('td');
+        bus_remain.innerText = remain_time;
+        tr.appendChild(bus_name);
+        tr.appendChild(bus_departure);
+        tr.appendChild(bus_remain);
+        way_time.appendChild(tr);
       }
-
-      var tr = document.createElement('tr');
-      var bus_name = document.createElement('td');
-      bus_name.innerText = y2o[i][0];
-      var bus_departure = document.createElement('td');
-      bus_departure.innerText = y2o[i][1];
-      var bus_remain = document.createElement('td');
-      bus_remain.innerText = remain_time;
-      tr.appendChild(bus_name);
-      tr.appendChild(bus_departure);
-      tr.appendChild(bus_remain);
-      y2o_time.appendChild(tr);
     }
-  }
-
-  if (morethan0 == 0) {
-    document.getElementById('y2o_remain_time').innerText = '本日の運行は終了しています';
+    if (bus_end == 0) {
+      document.getElementById(terminal_remain_time[two_way]).innerText = '本日の運行は終了しています';
+    }
   }
 }
 

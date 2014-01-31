@@ -12,6 +12,7 @@
       <li><a href='#general' class='red' id='tab_general'>一般</a></li>
       <li><a href='#portal' class='green' id='tab_portal'>ポータル</a></li>
       <li><a href='#vpn' class='yellow' id='tab_vpn'>VPN</a></li>
+      <li><a href='#bus' class='blue' id='tab_bus'>バス</a></li>
     </ul>
   </div>
   <div id='tab_content' class='tab_content'>
@@ -88,6 +89,29 @@
         <label></label>
         <button id='vpn_save'>保存</button>
         <button id='vpn_delete'>削除</button>
+      </fieldset>
+    </div>
+
+    <!-- Tab Bus -->
+    <div id='bus' class='page'>
+      <fieldset class='registered'>
+        <legend>登録状況</legend>
+        <p id='b_registered'></p>
+      </fieldset>
+      <br>
+      <fieldset class='field_bus'>
+        <legend>登録 / 変更</legend>
+        <br>
+        <label for='building'>出発号館 : </label>
+        <select name='from_yatsukaho'>
+          <option name='fy' value='1'>65号館</option>
+          <option name='fy' value='2'>61号館</option>
+          <option name='fy' value='3'>74号館</option>
+        </select>
+        <small>※ やつかほ から乗車の際に普段利用する号館</small>
+        <br>
+        <label></label>
+        <button id='bus_save'>保存</button>
       </fieldset>
     </div>
   </div>

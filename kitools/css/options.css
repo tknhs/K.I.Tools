@@ -27,7 +27,7 @@ br {
 fieldset {
   width: 450px;
 }
-fieldset.field_general{
+fieldset.field_general, fieldset.field_bus, #b_registered{
   width: 550px;
 }
 fieldset.field_portal label, fieldset.field_vpn label{
@@ -83,6 +83,9 @@ ul.tab li a.red {
 }
 ul.tab li a.yellow {
   border-top: 5px #ffd242 solid;
+}
+ul.tab li a.blue {
+  border-top: 5px #1E90FF solid;
 }
 /* clerfix */
 .clear:after {

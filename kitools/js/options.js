@@ -76,6 +76,15 @@ document.getElementById('vpn_save').onclick = function(){
 }
 
 /**
+ * Busタブ
+ **/
+document.getElementById('bus_save').onclick = function() {
+  var bus_building = document.getElementsByName('from_yatsukaho')[0].value;
+  localStorage['bus_building'] = JSON.stringify(bus_building);
+  registerTools();
+}
+
+/**
  *  その他
  **/
 // 情報を登録しているか
@@ -115,6 +124,12 @@ function registerTools(){
       v_register.innerHTML = '登録済';
       v_register.className = '';
     }
+    // Bus
+    var bus_building = (localStorage['bus_building'] === undefined) ? 0 : JSON.parse(localStorage['bus_building'])-1;
+    var bus_opt = document.getElementsByName('fy')[bus_building];
+    bus_opt.setAttribute('selected', 'selected');
+    var b_register = document.getElementById('b_registered');
+    b_register.innerText = bus_opt.innerText;
   });
 }
 

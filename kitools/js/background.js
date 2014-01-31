@@ -50,14 +50,19 @@ chrome.extension.onMessage.addListener(function(req, sender, callback) {
         if (latitude<geo.lat && longitude<geo.lon) {
           var my_location = '八束穂→扇が丘';
           var my_img = '../icon/bus1.png';
+          var arrival_id = (localStorage['bus_building'] === undefined) ? 1 : JSON.parse(localStorage['bus_building']);
+          var departure_id = 4;
         } else {
           var my_location = '扇が丘→八束穂';
           var my_img = '../icon/bus2.png';
+          var arrival_id = 1;
+          var departure_id = (localStorage['bus_building'] === undefined) ? 1: JSON.parse(localStorage['bus_building']);
+          departure_id = Math.abs(departure_id - 5);
         }
         var my_day = (week_holi == 6) ? '土曜' : '平日';
         var bus = timetable[my_day][my_location];
         for (var i=0; i<bus.length; i++){
-          var bus_min = bus[i][1].split(':');
+          var bus_min = bus[i][arrival_id].split(':');
           var bus_time = Number(bus_min[0])*60 + Number(bus_min[1]);
           if (bus_time - time == 10) {
             // 通知
@@ -66,7 +71,7 @@ chrome.extension.onMessage.addListener(function(req, sender, callback) {
             var notify = webkitNotifications.createNotification(
               my_img,
               my_location,
-              '10分前 | 出発: ' + bus[i][1] + ' 到着: ' + bus[i][4]
+              '10分前 | 出発: ' + bus[i][arrival_id] + ' 到着: ' + bus[i][departure_id]
             );
             audio.play();
             notify.show();
