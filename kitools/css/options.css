@@ -64,6 +64,8 @@ ul.tab li {
   border: 1px #ddd solid;
   border-top: none;
   border-bottom: 2px #ddd solid;
+  width:100px;
+  text-align:center;
 }
 ul.tab li.none {
   border-bottom: 2px #fff solid;

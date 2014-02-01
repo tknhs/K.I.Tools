@@ -128,18 +128,6 @@ function request(isbn, lc, whichreq, repeat, srch){
             }
           }
         }
-        /* affiliate */
-        var affi_url = 'http://www.amazon.co.jp/exec/obidos/ASIN/'+ _isbn +'/brsmc-22/ref=nosim';
-        var affi = document.createElement('p');
-        if (location.href == affi_url){
-          affi.setAttribute('class', 'amalin-affi amalin-affi0');
-          affi.innerHTML = 'ご協力ありがとうございます';
-        }
-        else{
-          affi.setAttribute('class', 'amalin-affi amalin-affi1');
-          affi.innerHTML = '<a href='+ affi_url +' style="text-decoration: none;">アフィリエイトに協力する</a>';
-        }
-        $('.amalin').append(affi);
       }
       else if (wr == 1){
         /* search result page */
@@ -156,4 +144,3 @@ function request(isbn, lc, whichreq, repeat, srch){
   }
   xhr.send();
 }
-
