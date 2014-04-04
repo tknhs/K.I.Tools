@@ -75,6 +75,7 @@ chrome.extension.onMessage.addListener(function(req, sender, callback) {
             );
             audio.play();
             notify.show();
+            notify.onclick = function() { notify.cancel(); }
             setTimeout(function(){ notify.cancel(); }, 10*1000);
             break;
           }
