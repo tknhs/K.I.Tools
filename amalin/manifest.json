@@ -1,0 +1,33 @@
+{
+    "name": "K.I.Tools",
+    "version": "1.4.4",
+    "manifest_version": 2,
+    "minimum_chrome_version": "22",
+
+    "description": "KIT学生にとって便利なツールを提供します",
+    "homepage_url": "http://kit-shuttle-bus.appspot.com",
+    "icons": {
+      "128": "icon/icon128.png"
+    },
+
+    "permissions": [
+      "storage"
+    ],
+
+    "content_scripts": [
+    {
+        "matches": [
+          "http://www.amazon.co.jp/*/dp/*",
+          "http://www.amazon.co.jp/dp/*",
+          "http://www.amazon.co.jp/gp/product/*",
+          "http://www.amazon.co.jp/s*",
+          "http://www.amazon.co.jp/exec/*",
+          "http://www.amazon.co.jp/gp/bestsellers/books/*",
+          "http://linkit.kanazawa-it.ac.jp/*"
+        ],
+        "js": ["js/lib/jquery.min.js", "js/amalin.js"],
+        "css": ["css/amalin.css"],
+        "run_at": "document_end"
+      }
+    ]
+}
