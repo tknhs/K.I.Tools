@@ -9,7 +9,6 @@ window.onload = function() {
   var date = now_date();
   var today = date[0];
   var time = date[1];
-  update_checker(today);
   var servicetable = JSON.parse(localStorage['servicetable']).date;
   for (var i=0; i<servicetable.length; i++) {
     if (today <= servicetable[i][0]) {
@@ -39,6 +38,10 @@ function ins_bus_time(tt, wh, time) {
   var _wh = wh;
   var _time = time;
   var schedule = ['平日', '土曜', '日曜'];
+  var disp_sche = [
+    chrome.i18n.getMessage('popupJSSchedule0'),
+    chrome.i18n.getMessage('popupJSSchedule1'),
+    chrome.i18n.getMessage('popupJSSchedule2')];
   var terminal = ['扇が丘→八束穂', '八束穂→扇が丘'];
   var terminal_time = ['o2y_time', 'y2o_time'];
   var terminal_remain_time = ['o2y_remain_time', 'y2o_remain_time'];
@@ -47,13 +50,13 @@ function ins_bus_time(tt, wh, time) {
   var tc = document.getElementById('time_content');
   var p = document.createElement('p');
   p.setAttribute('class', 'date_schedule');
-  p.innerText = schedule[_wh] + 'の時刻表';
+  p.innerText = disp_sche[_wh] + chrome.i18n.getMessage('add');
   tc.parentNode.insertBefore(p, tc);
 
   // 日曜日のときは何もしない
   if (_wh == 2) {
     for (var i=0; i<2; i+=1) {
-      document.getElementById(terminal_remain_time[i]).innerText = '本日は運休日です';
+      document.getElementById(terminal_remain_time[i]).innerText = chrome.i18n.getMessage('popupJSServiceStatus0');
     }
     return;
   }
@@ -93,7 +96,7 @@ function ins_bus_time(tt, wh, time) {
       }
     }
     if (bus_end == 0) {
-      document.getElementById(terminal_remain_time[two_way]).innerText = '本日の運行は終了しています';
+      document.getElementById(terminal_remain_time[two_way]).innerText = chrome.i18n.getMessage('popupJSServiceStatus1');
     }
   }
 }
@@ -110,11 +113,4 @@ function ins_bus_schedule(service) {
   new_ele.setAttribute('class', 'bus_service');
   new_ele.innerText = bus_date;
   ele.appendChild(new_ele);
-}
-
-function update_checker(date_today) {
-  // バスデータの更新チェック
-  if (localStorage['bus_checked_date'] != date_today || localStorage['bus_checked_date'] === undefined) {
-    bus_data.update_check(date_today);
-  }
 }

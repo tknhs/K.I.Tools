@@ -1,5 +1,5 @@
 {
-  "default_locale": "en",
+  "default_locale": "ja",
   "name": "__MSG_extName__",
   "version": "0.1",
   "manifest_version": 2,
@@ -13,6 +13,7 @@
   },
 
   "permissions": [
+    "geolocation",
     "notifications",
     "tabs",
     "http://www.kanazawa-it.ac.jp/"
@@ -27,7 +28,7 @@
     "scripts": [
       "js/lib/getnowdate.js",
       "js/lib/busdata.js",
-      "js/busnotify.js",
+      "js/lib/busnotify.js",
       "js/background.js"
     ]
   },

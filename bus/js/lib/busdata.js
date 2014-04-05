@@ -25,29 +25,27 @@ var bus_data = {
     /**
      * Check for updates
      **/
-    chrome.storage.local.get(function(items) {
-      var today = date_today;
-      if (items.bus_checked_date === undefined) {
-        // first time
-        var timetable = JSON.stringify(bus_data.update(0));
-        var servicetable = JSON.stringify(bus_data.update(1));
+    var today = date_today;
+    if (localStorage['bus_checked_date'] === undefined) {
+      // first time
+      var timetable = JSON.stringify(bus_data.update(0));
+      var servicetable = JSON.stringify(bus_data.update(1));
+      localStorage['timetable'] = timetable;
+      localStorage['servicetable'] = servicetable;
+      localStorage['bus_checked_date'] = today;
+    }
+    if (localStorage['bus_checked_date'] < today) {
+      // get the data per day
+      var timetable = JSON.stringify(bus_data.update(0));
+      var servicetable = JSON.stringify(bus_data.update(1));
+      if (JSON.parse(localStorage['timetable']).version != timetable.version) {
         localStorage['timetable'] = timetable;
+      }
+      if (JSON.parse(localStorage['servicetable']).version != servicetable.version) {
         localStorage['servicetable'] = servicetable;
-        localStorage['bus_checked_date'] = today;
       }
-      if (items.bus_checked_date < today) {
-        // get the data per day
-        var timetable = JSON.stringify(bus_data.update(0));
-        var servicetable = JSON.stringify(bus_data.update(1));
-        if (JSON.parse(items.timetable).version != timetable.version) {
-          localStorage['timetable'] = timetable;
-        }
-        if (JSON.parse(items.servicetable).version != servicetable.version) {
-          localStorage['servicetable'] = servicetable;
-        }
-        localStorage['bus_checked_date'] = today;
-      }
-    });
+      localStorage['bus_checked_date'] = today;
+    }
   }
 }
 

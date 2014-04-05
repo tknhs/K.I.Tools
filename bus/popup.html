@@ -3,87 +3,96 @@
 <head>
   <meta charset='utf-8'>
   <link href='css/popup.css' rel='stylesheet' type='text/css'>
+  <link href='css/ion.tabs.css' rel='stylesheet' type='text/css'>
+  <link href='css/ion.tabs.skinFlat.css' rel='stylesheet' type='text/css'>
 </head>
 <body>
-  <div id='tab_menu'>
-    <ul class='tab clear'>
-      <li><a href='#bus_time' class='red' id='tab_time'>バス時刻表</a></li>
-      <li><a href='#bus_sche' class='green' id='tab_sche'>バス日程表</a></li>
-    </ul>
-  </div>
-
-  <div id='tab_content' class='tab_content'>
-    <!-- Tab Time-->
-    <div id='bus_time' class='page'>
-      <div id='time_menu'>
-        <ul class='tab clear'>
-          <li><a href='#o2y' class='black' id='tab_ohgi'>扇が丘 → やつかほ</a></li>
-          <li><a href='#y2o' class='brown' id='tab_yatsukaho'>やつかほ → 扇が丘</a></li>
+<div class='ionTabs' id='tabs_bus' data-name='tabs_group_bus'>
+  <ul class='ionTabs__head'>
+    <li class='ionTabs__tab' data-target='tab_time' data-resource='popupTabBusTime'></li>
+    <li class='ionTabs__tab' data-target='tab_sche' data-resource='popupTabBusSchedule'></li>
+  </ul>
+  <div class='ionTabs__body'>
+    <!-- Tab Time -->
+    <div class='ionTabs__item' data-name='tab_time'>
+      <div class='ionTabs' id='tabs_location' data-name='tabs_group_location'>
+        <ul class='ionTabs__head'>
+          <li class='ionTabs__tab' data-target='tab_ohgi' data-resource='popupTabLocationOhgi'></li>
+          <li class='ionTabs__tab' data-target='tab_yatsukaho' data-resource='popupTabLocationYatsukaho'></li>
         </ul>
-      </div>
-      <div id='time_content' class='time_content'>
-        <!-- 扇が丘→やつかほ -->
-        <div id='o2y'>
-          <p id='o2y_remain_time'></p>
-          <table>
-            <thead>
-              <tr>
-                <th>便名</th>
-                <th>出発時刻</th>
-                <th>あと何分</th>
-              </tr>
-            </thead>
-            <tbody id='o2y_time'>
-            </tbody>
-          </table>
-        </div>
-        <!-- やつかほ→扇が丘 -->
-        <div id='y2o'>
-          <p id='y2o_remain_time'></p>
-          <table>
-            <thead>
-              <tr>
-                <th>便名</th>
-                <th>出発時刻</th>
-                <th>あと何分</th>
-              </tr>
-            </thead>
-            <tbody id='y2o_time'>
-            </tbody>
-          </table>
+        <div class='ionTabs__body'>
+          <div id='time_content'></div>
+          <!-- 扇が丘→やつかほ -->
+          <div class='ionTabs__item' data-name='tab_ohgi'>
+            <div id='o2y'>
+              <p id='o2y_remain_time'></p>
+              <table>
+                <thead>
+                  <tr>
+                    <th data-resource='popupTableNum'></th>
+                    <th data-resource='popupTableDeparture'></th>
+                    <th data-resource='popupTableMinutes'></th>
+                  </tr>
+                </thead>
+                <tbody id='o2y_time'>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <!-- やつかほ→扇が丘 -->
+          <div class='ionTabs__item' data-name='tab_yatsukaho'>
+            <div id='y2o'>
+              <p id='y2o_remain_time'></p>
+              <table>
+                <thead>
+                  <tr>
+                    <th data-resource='popupTableNum'></th>
+                    <th data-resource='popupTableDeparture'></th>
+                    <th data-resource='popupTableMinutes'></th>
+                  </tr>
+                </thead>
+                <tbody id='y2o_time'>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class='ionTabs__preloader'></div>
         </div>
       </div>
     </div>
-
     <!-- Tab Schedule -->
-    <div id='bus_sche' class='page'>
-      <div id='sche_menu'>
-        <ul class='tab clear'>
-          <li><a href='#weekday' class='blue' id='tab_weekday'>平日運行日</a></li>
-          <li><a href='#sunday' class='red' id='tab_sunday'>運休日</a></li>
+    <div class='ionTabs__item' data-name='tab_sche'>
+      <div class='ionTabs' id='tabs_day' data-name='tabs_group_day'>
+        <ul class="ionTabs__head">
+          <li class='ionTabs__tab' data-target='tab_weekday' data-resource='popupTabDayWeekday'></li>
+          <li class='ionTabs__tab' data-target='tab_sunday' data-resource='popupTabDaySunday'></li>
         </ul>
-      </div>
-      <div id='sche_content' class='sche_content'>
-        <!-- 平日運行日 -->
-        <div id='weekday' class='page'>
-          <ul id='bus_weekday'>
-          </ul>
-        </div>
-        <!-- 運休日 -->
-        <div id='sunday' class='page'>
-          <ul id='bus_sunday'>
-          </ul>
+        <div class='ionTabs__body'>
+          <!-- 平日運行日 -->
+          <div class='ionTabs__item' data-name='tab_weekday'>
+            <div id='weekday' class='page'>
+              <ul id='bus_weekday'></ul>
+            </div>
+          </div>
+          <!-- 運休日 -->
+          <div class='ionTabs__item' data-name='tab_sunday'>
+            <div id='sunday' class='page'>
+              <ul id='bus_sunday'></ul>
+            </div>
+          </div>
+          <div class="ionTabs__preloader"></div>
         </div>
       </div>
     </div>
   </div>
+</div>
+<div id='last_update'></div>
 
-  <script src='js/lib/jquery.min.js'></script>
-  <script src='js/lib/tab.js'></script>
-  <script src='js/lib/getnowdate.js'></script>
-  <script src='js/lib/busdata.js'></script>
-  <script src='js/popup.js'></script>
-  <script src='js/busschedule.js'></script>
-  <script src='js/locales.js'></script>
+<script src='js/lib/jquery.min.js'></script>
+<script src='js/lib/ion.tabs.js'></script>
+<script src='js/popup.js'></script>
+<script src='js/lib/getnowdate.js'></script>
+<script src='js/busschedule.js'></script>
+<script src='js/locales.js'></script>
 </body>
 </html>

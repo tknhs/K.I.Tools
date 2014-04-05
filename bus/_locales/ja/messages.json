@@ -1,6 +1,6 @@
 {
   "extName": {
-    "message": "ケイアイティシャトルバス",
+    "message": "シャトルバス",
     "description": "拡張機能名称"
   },
   "extDesc": {
@@ -26,5 +26,72 @@
   },
   "optionsSelectOpt3": {
     "message": "74号館"
+  },
+
+  "popupTabBusTime": {
+    "message": "時刻表"
+  },
+  "popupTabBusSchedule": {
+    "message": "日程表"
+  },
+  "popupTabLocationOhgi": {
+    "message": "扇が丘 → やつかほ"
+  },
+  "popupTabLocationYatsukaho": {
+    "message": "やつかほ → 扇が丘"
+  },
+
+  "popupTableNum": {
+    "message": "便名"
+  },
+  "popupTableDeparture": {
+    "message": "出発時刻"
+  },
+  "popupTableMinutes": {
+    "message": "あと何分"
+  },
+
+  "popupTabDayWeekday": {
+    "message": "平日運行日"
+  },
+  "popupTabDaySunday": {
+    "message": "運休日"
+  },
+
+  "popupJSSchedule0": {
+    "message": "平日"
+  },
+  "popupJSSchedule1": {
+    "message": "土曜"
+  },
+  "popupJSSchedule2": {
+    "message": "日曜"
+  },
+  "add": {
+    "message": "の時刻表"
+  },
+
+  "popupJSServiceStatus0": {
+    "message": "本日は運休日です"
+  },
+  "popupJSServiceStatus1": {
+    "message": "本日の運行は終了しています"
+  },
+
+  "last_update": {
+    "message": "データ最終更新日時: "
+  },
+
+  "notifyDeparture": {
+    "message": "出発: "
+  },
+  "notifyArrive": {
+    "message": " 到着: "
+  },
+  "notifyAfter": {
+    "message": ""
+  },
+  "notifyMinutes": {
+    "message": "分前 | "
   }
 }

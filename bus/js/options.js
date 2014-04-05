@@ -3,7 +3,19 @@
  **/
 function autoSaveForm() {
   // Log DataSaver events (before DataSaver start!)
-  $(document).on('DataSaver_start DataSaver_stop DataSaver_save DataSaver_load DataSaver_remove', function(e) {});
+  $(document).on('DataSaver_start DataSaver_stop DataSaver_save DataSaver_load DataSaver_remove', function(e) {
+    if (e.type == 'DataSaver_save') {
+      if (JSON.parse(localStorage['bus_notify'])) {
+        chrome.runtime.getBackgroundPage(function(backgroundPage) {
+          backgroundPage.bus_notify_checker('start');
+        });
+      } else {
+        chrome.runtime.getBackgroundPage(function(backgroundPage) {
+          backgroundPage.bus_notify_checker('stop');
+        });
+      }
+    }
+  });
 
   // Save data for fields with class 'save'
   $('#settings_form .save').DataSaver({ events: 'change keyup' });

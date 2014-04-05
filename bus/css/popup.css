@@ -1,39 +1,48 @@
 body {
-  min-width: 360px;
+  min-width: 400px;
   font-family: 'メイリオ', Meiryo, sans-serif;
-  margin: 20px;
+  background-color: #e8d3c7;
 }
 
-.kit-calendar:hover {
-  background-color: #d0d0d0;
+/**
+ * ionTabs
+ **/
+div#tabs_bus.ionTabs, div#tabs_location.ionTabs, div#tabs_day.ionTabs {
+  margin: 0px;
 }
-
-.kit-calendar:active {
-  background-color: #a0a0a0;
+div#Tab__tabs_group_bus__tab_time, div#Tab__tabs_group_bus__tab_sche,
+div#Tab__tabs_group_location__tab_yatsukaho, div#Tab__tabs_group_location__tab_ohgi,
+div#Tab__tabs_group_day__tab_weekday, div#Tab__tabs_group_day__tab_sunday {
+  padding: 0px;
+  margin-bottom: 30px;
 }
-
-.kit-calendar {
-  border: 1px solid transparent;
-  border-radius: 2px;
-  display:inline;
-  padding: 2px 4px;
-  font-size: 150%;
-  background-color: #f0f0f0;
-  width: 360px;
+li#Button__tabs_group_bus__tab_time.ionTabs__tab.ionTabs__tab_state_active,
+li#Button__tabs_group_bus__tab_sche.ionTabs__tab.ionTabs__tab_state_active,
+li#Button__tabs_group_location__tab_ohgi.ionTabs__tab.ionTabs__tab_state_active,
+li#Button__tabs_group_location__tab_yatsukaho.ionTabs__tab.ionTabs__tab_state_active,
+li#Button__tabs_group_day__tab_weekday.ionTabs__tab.ionTabs__tab_state_active,
+li#Button__tabs_group_day__tab_sunday.ionTabs__tab.ionTabs__tab_state_active {
+  font-size: 125%;
 }
-
-.event {
-  font-size: 75%;
-  margin-bottom: -5px;
+li#Button__tabs_group_location__tab_ohgi.ionTabs__tab_state_active {
+  background-color: #c7f9c7;
+}
+li#Button__tabs_group_location__tab_yatsukaho.ionTabs__tab_state_active {
+  background-color: #FFFACD;
+}
+li#Button__tabs_group_day__tab_weekday.ionTabs__tab_state_active {
+  background-color: #c7e0f9;
+}
+li#Button__tabs_group_day__tab_sunday.ionTabs__tab_state_active {
+  background-color: #f9c7da;
 }
 
 .date_schedule {
   text-align: center;
-  margin: 10px 0px 0px 0px;
   padding: 10px 0px;
+  margin: 0px;
   background-color: #F0FFFF;
 }
-
 div#o2y {
   padding-bottom: 10px;
   background-color: #c7f9c7;
@@ -58,18 +67,20 @@ div#y2o {
 }
 table, div#y2o {
   text-align: center;
-  margin-left:auto;margin-right:auto;
+  margin-left:auto;
+  margin-right:auto;
 }
 th, tr {
   min-width: 100px;
   padding: 5px;
 }
-
 ul#bus_weekday {
+  margin: 0px;
   padding: 10px;
   background-color: #c7e0f9;
 }
 ul#bus_sunday {
+  margin: 0px;
   padding: 10px;
   background-color: #f9c7da;
 }
@@ -78,63 +89,8 @@ p.bus_service {
   font-size: 125%;
   text-align: center;
 }
-
-/* タブ */
-.tab_content {
-  padding-top: 20px;
+#last_update {
+  position: fixed;
+  bottom: 0px;
+  right: 10px;
 }
-ul.tab {
-  margin: 0;
-  padding: 0;
-  border-bottom: 2px #ddd solid;
-}
-ul.tab li {
-  float: left;
-  margin: 0 0 0 5px;
-  position: relative;
-  bottom: -2px;
-  list-style-type: none;
-  border: 1px #ddd solid;
-  border-top: none;
-  border-bottom: 2px #ddd solid;
-}
-ul.tab li.none {
-  border-bottom: 2px #fff solid;
-  background: #eee;
-}
-ul.tab li a {
-  color: #000;
-  display: block;
-  padding: 3px 10px 5px;
-  text-decoration: none;
-}
-ul.tab li a.green {
-  border-top: 5px #4cbb47 solid;
-}
-ul.tab li a.red {
-  border-top: 5px #dd1d25 solid;
-}
-ul.tab li a.yellow {
-  border-top: 5px #ffd242 solid;
-}
-ul.tab li a.blue {
-  border-top: 5px #0000FF solid;
-}
-ul.tab li a.black {
-  border-top: 5px #000 solid;
-}
-ul.tab li a.brown {
-  border-top: 5px #A52A2A solid;
-}
-
-/* clerfix */
-.clear:after {
-  content:"";
-  display:block;
-  overflow:hidden;
-  clear: both;
-}
-.clear {
-  zoom:1;
-}
-
