@@ -1,0 +1,36 @@
+{
+  "name": "K.I.Tools",
+  "version": "0.1",
+  "manifest_version": 2,
+  "minimum_chrome_version": "22",
+
+  "description": "KIT学生にとって便利なツールを提供します",
+  "homepage_url": "https://github.com/tknhs/K.I.Tools",
+  "icons": {
+    "16": "icon/icon16.png",
+    "48": "icon/icon48.png",
+    "128": "icon/icon128.png"
+  },
+
+  "permissions": [
+    "storage",
+    "http://portal10.mars.kanazawa-it.ac.jp/",
+    "https://ras.kanazawa-it.ac.jp/"
+  ],
+
+  "content_scripts": [
+    {
+      "matches": [
+        "http://mars10.mars.kanazawa-it.ac.jp/kyuyo/student",
+        "http://portal10.mars.kanazawa-it.ac.jp/sysportal/StudentLogin?SYS=estimate",
+        "http://portal10.mars.kanazawa-it.ac.jp/portal/student",
+        "https://ras.kanazawa-it.ac.jp/portal/,DanaInfo=portal10.mars.kanazawa-it.ac.jp+student",
+        "https://ras.kanazawa-it.ac.jp/dana-na/auth/url_default/welcome.cgi"
+      ],
+      "js": ["js/lib/cryptico.min.js","js/portal.js"],
+      "run_at": "document_end"
+    }
+  ],
+
+  "options_page": "options.html"
+}
