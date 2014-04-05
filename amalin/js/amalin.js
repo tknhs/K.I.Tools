@@ -93,7 +93,9 @@ function request(isbn, lc, whichreq, repeat, srch){
     if (xhr.readyState == 4 && xhr.status == 200) {
       var linkit = document.createElement('linkit');
       linkit.innerHTML = xhr.responseText;
-      lend = (linkit.innerHTML.search('保管') != -1) ? '<b class="amalin-sub amalin-sub1">'+chrome.i18n.getMessage('amalinStatus1')+'</b>' : '<b class="amalin-sub amalin-sub2">'+chrome.i18n.getMessage('amalinStatus0')+'</b>';
+      lend = (linkit.innerHTML.search('保管') != -1)
+        ? '<b class="amalin-sub amalin-sub1">'+chrome.i18n.getMessage('amalinStatus1')+'</b>'
+        : '<b class="amalin-sub amalin-sub2">'+chrome.i18n.getMessage('amalinStatus0')+'</b>';
       var book = linkit.getElementsByTagName('a')[1];
 
       // LC have this Book.
@@ -134,6 +136,7 @@ function request(isbn, lc, whichreq, repeat, srch){
   }
   xhr.send();
 }
+
 var nw = '';
 var prf = location.href + location.search;
 AmazonLinkit(prf, nw);

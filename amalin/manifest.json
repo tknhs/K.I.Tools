@@ -1,29 +1,29 @@
 {
-    "default_locale":"ja",
-    "name": "Amalin",
-    "version": "0.1",
-    "manifest_version": 2,
+  "default_locale":"ja",
+  "name": "AmaLin",
+  "version": "0.1",
+  "manifest_version": 2,
 
-    "description": "__MSG_extDesc__",
-    "homepage_url": "https://github.com/tknhs/K.I.Tools",
-    "icons": {
-      "128": "icon/icon128.png"
-    },
+  "description": "__MSG_extDesc__",
+  "homepage_url": "https://github.com/tknhs/K.I.Tools",
+  "icons": {
+    "128": "icon/icon128.png"
+  },
 
-    "content_scripts": [
+  "content_scripts": [
     {
-        "matches": [
-          "http://www.amazon.co.jp/*/dp/*",
-          "http://www.amazon.co.jp/dp/*",
-          "http://www.amazon.co.jp/gp/product/*",
-          "http://www.amazon.co.jp/s*",
-          "http://www.amazon.co.jp/exec/*",
-          "http://www.amazon.co.jp/gp/bestsellers/books/*",
-          "http://linkit.kanazawa-it.ac.jp/*"
-        ],
-        "js": ["js/lib/jquery.min.js", "js/amalin.js"],
-        "css": ["css/amalin.css"],
-        "run_at": "document_end"
-      }
-    ]
+      "matches": [
+        "http://www.amazon.co.jp/*/dp/*",
+        "http://www.amazon.co.jp/dp/*",
+        "http://www.amazon.co.jp/gp/product/*",
+        "http://www.amazon.co.jp/s*",
+        "http://www.amazon.co.jp/exec/*",
+        "http://www.amazon.co.jp/gp/bestsellers/books/*",
+        "http://linkit.kanazawa-it.ac.jp/*"
+      ],
+      "js": ["js/lib/jquery.min.js", "js/amalin.js"],
+      "css": ["css/amalin.css"],
+      "run_at": "document_end"
+    }
+  ]
 }
