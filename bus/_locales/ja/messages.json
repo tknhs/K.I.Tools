@@ -1,0 +1,30 @@
+{
+  "extName": {
+    "message": "ケイアイティシャトルバス",
+    "description": "拡張機能名称"
+  },
+  "extDesc": {
+    "message": "金沢工業大学 -非公式-",
+    "description": "拡張機能説明"
+  },
+
+  "optionsTitle": {
+    "message": "設定",
+    "description": "オプションページのタイトル"
+  },
+  "optionsLabelBusNotify": {
+    "message": "時刻通知 : version β"
+  },
+  "optionsLabelDepartureBuilding": {
+    "message": "出発号館 : 八束穂から乗車の際に利用する号館"
+  },
+  "optionsSelectOpt1": {
+    "message": "65号館"
+  },
+  "optionsSelectOpt2": {
+    "message": "61号館"
+  },
+  "optionsSelectOpt3": {
+    "message": "74号館"
+  }
+}

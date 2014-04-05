@@ -1,0 +1,60 @@
+/*****************************/
+/* iToggle */
+/*****************************/
+
+.iToggle,
+.iToggle * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.iToggle {
+    display: inline-block;
+    border: 1px solid #AAA;
+    border-radius: 3px;
+    cursor: pointer;
+    vertical-align: text-bottom;
+}
+
+.iToggle.focus {
+    outline: none;
+    border-color: #549ED4;
+    box-shadow: 0 0 5px #549ED4;
+}
+
+.iToggle span.label {
+    display: inline-block;
+    padding: 3px 5px;
+    text-align: center;
+    color: white;
+    white-space: nowrap;
+}
+
+.iToggle .slider {
+    border: 1px solid #CCC;
+    background-color: rgb(238,238,238); /* fallback */
+    background-image: linear-gradient(bottom, rgb(199,199,199) 3%, rgb(245,245,245) 100%, rgb(255,255,255) 95%);
+    background-image: -o-linear-gradient(bottom, rgb(199,199,199) 3%, rgb(245,245,245) 100%, rgb(255,255,255) 95%);
+    background-image: -moz-linear-gradient(bottom, rgb(199,199,199) 3%, rgb(245,245,245) 100%, rgb(255,255,255) 95%);
+    background-image: -webkit-linear-gradient(bottom, rgb(199,199,199) 3%, rgb(245,245,245) 100%, rgb(255,255,255) 95%);
+    background-image: -ms-linear-gradient(bottom, rgb(199,199,199) 3%, rgb(245,245,245) 100%, rgb(255,255,255) 95%);
+    background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0.03, rgb(199,199,199)),
+        color-stop(1, rgb(245,245,245)),
+        color-stop(0.95, rgb(255,255,255))
+    );
+}
+
+.iToggle .label-off {
+    background: #FF0000;
+}
+
+.iToggle .label-on {
+    background: #00DD00;
+}

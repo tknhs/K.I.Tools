@@ -1,0 +1,140 @@
+body {
+  min-width: 360px;
+  font-family: 'メイリオ', Meiryo, sans-serif;
+  margin: 20px;
+}
+
+.kit-calendar:hover {
+  background-color: #d0d0d0;
+}
+
+.kit-calendar:active {
+  background-color: #a0a0a0;
+}
+
+.kit-calendar {
+  border: 1px solid transparent;
+  border-radius: 2px;
+  display:inline;
+  padding: 2px 4px;
+  font-size: 150%;
+  background-color: #f0f0f0;
+  width: 360px;
+}
+
+.event {
+  font-size: 75%;
+  margin-bottom: -5px;
+}
+
+.date_schedule {
+  text-align: center;
+  margin: 10px 0px 0px 0px;
+  padding: 10px 0px;
+  background-color: #F0FFFF;
+}
+
+div#o2y {
+  padding-bottom: 10px;
+  background-color: #c7f9c7;
+}
+div#y2o {
+  padding-bottom: 10px;
+  background-color: #FFFACD;
+}
+#o2y_remain_time {
+  margin: 0px 0px 10px 0px;
+  padding-bottom: 5px;
+  text-align: center;
+  font-size: 150%;
+  background-color: #F0FFFF;
+}
+#y2o_remain_time {
+  margin: 0px 0px 10px 0px;
+  padding-bottom: 5px;
+  text-align: center;
+  font-size: 150%;
+  background-color: #F0FFFF;
+}
+table, div#y2o {
+  text-align: center;
+  margin-left:auto;margin-right:auto;
+}
+th, tr {
+  min-width: 100px;
+  padding: 5px;
+}
+
+ul#bus_weekday {
+  padding: 10px;
+  background-color: #c7e0f9;
+}
+ul#bus_sunday {
+  padding: 10px;
+  background-color: #f9c7da;
+}
+p.bus_service {
+  margin: 5px;
+  font-size: 125%;
+  text-align: center;
+}
+
+/* タブ */
+.tab_content {
+  padding-top: 20px;
+}
+ul.tab {
+  margin: 0;
+  padding: 0;
+  border-bottom: 2px #ddd solid;
+}
+ul.tab li {
+  float: left;
+  margin: 0 0 0 5px;
+  position: relative;
+  bottom: -2px;
+  list-style-type: none;
+  border: 1px #ddd solid;
+  border-top: none;
+  border-bottom: 2px #ddd solid;
+}
+ul.tab li.none {
+  border-bottom: 2px #fff solid;
+  background: #eee;
+}
+ul.tab li a {
+  color: #000;
+  display: block;
+  padding: 3px 10px 5px;
+  text-decoration: none;
+}
+ul.tab li a.green {
+  border-top: 5px #4cbb47 solid;
+}
+ul.tab li a.red {
+  border-top: 5px #dd1d25 solid;
+}
+ul.tab li a.yellow {
+  border-top: 5px #ffd242 solid;
+}
+ul.tab li a.blue {
+  border-top: 5px #0000FF solid;
+}
+ul.tab li a.black {
+  border-top: 5px #000 solid;
+}
+ul.tab li a.brown {
+  border-top: 5px #A52A2A solid;
+}
+
+/* clerfix */
+.clear:after {
+  content:"";
+  display:block;
+  overflow:hidden;
+  clear: both;
+}
+.clear {
+  zoom:1;
+}
+

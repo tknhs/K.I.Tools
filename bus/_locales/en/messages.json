@@ -1,0 +1,30 @@
+{
+  "extName": {
+    "message": "ケイアイティシャトルバス",
+    "description": "拡張機能名称"
+  },
+  "extDesc": {
+    "message": "Kanazawa Insutitute Of Technology -Unofficial-",
+    "description": "拡張機能説明"
+  },
+
+  "optionsTitle": {
+    "message": "Settings",
+    "description": "オプションページのタイトル"
+  },
+  "optionsLabelBusNotify": {
+    "message": "Departure time notification : version β"
+  },
+  "optionsLabelDepartureBuilding": {
+    "message": "Departure building : Using usually building八束穂から乗車の際に利用する号館"
+  },
+  "optionsSelectOpt1": {
+    "message": "#65 Building"
+  },
+  "optionsSelectOpt2": {
+    "message": "#61 Building"
+  },
+  "optionsSelectOpt3": {
+    "message": "#74 Building"
+  }
+}

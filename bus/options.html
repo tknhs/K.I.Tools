@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang='ja'>
+<head>
+  <meta charset='utf-8'>
+  <link href='css/options.css' rel='stylesheet' type='text/css'>
+  <link href='css/itoggle.css' rel='stylesheet' type='text/css'>
+  <link href='css/easydropdown.metro.css' rel='stylesheet' type='text/css'>
+  <title data-resource='optionsTitle'></title>
+</head>
+<body>
+<h1 data-resource='optionsTitle'></h1>
+<hr>
+<br>
+<form id='settings_form' method='post'>
+  <div id='bus' class='page'>
+    <label data-resource='optionsLabelBusNotify'></label>
+    <br>
+    <input type='checkbox' name='bus_notify' id='settings_style' class='save iToggle' data-label-on='on' data-label-off='off'>
+    <br>
+    <label data-resource='optionsLabelDepartureBuilding'></label>
+    <br>
+    <select class='save dropdown' name='bus_building' id='settings_style'>
+      <option value='1' class='save' data-resource='optionsSelectOpt1'></option>
+      <option value='2' class='save' data-resource='optionsSelectOpt2'></option>
+      <option value='3' class='save' data-resource='optionsSelectOpt3'></option>
+    </select>
+  </div>
+</form>
+
+<script src='js/lib/jquery.min.js'></script>
+<script src='js/lib/jquery.DataSaver.js'></script>
+<script src='js/lib/itoggle.jquery.js'></script>
+<script src='js/lib/jquery.easydropdown.js'></script>
+<script src='js/options.js'></script>
+<script src='js/locales.js'></script>
+</body>
+</html>
