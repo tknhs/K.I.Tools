@@ -42,24 +42,3 @@
 .amalin-sub2 {
   color: red;
 }
-
-/* アソシエイト */
-.amalin-affi {
-  border: 1px solid transparent;
-  border-radius: 5px;
-  display:inline;
-  font-size: 70%;
-  margin-left: -40px;
-  padding: 0px 4px;
-}
-.amalin-affi0 {
-  color: #3a87ad;
-  background-color: #d9edf7;
-  border-color: #bce8f1;
-}
-.amalin-affi1 {
-  color: #b94a48;
-  background-color: #f2dede;
-  border-color: #eed3d7;
-}
-
