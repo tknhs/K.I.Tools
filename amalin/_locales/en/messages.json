@@ -1,0 +1,18 @@
+{
+	"extDesc":{
+		"message": "金沢工業大学 -非公式-",
+		"description": "拡張機能説明"
+	},
+	"amalinStatus0":{
+		"message": "Borrowing"
+	},
+	"amalinStatus1":{
+		"message": "Keeping"
+	},
+	"amalinLocation0":{
+		"message": "LC hasn't this book."
+	},
+	"amalinLocation1":{
+		"message": "LC has this book."
+	}
+}

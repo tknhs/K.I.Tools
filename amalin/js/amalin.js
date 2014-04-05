@@ -5,16 +5,6 @@
  *
  **/
 
-chrome.storage.local.get(function(items){
-  var general = items.general[1];
-  if(general){
-    var nw = '';
-    var prf = location.href + location.search;
-    AmazonLinkit(prf, nw);
-  }
-});
-
-
 function AmazonLinkit(prf, nw){
   if (prf == nw){
     nw = location.href + location.search;
@@ -103,7 +93,7 @@ function request(isbn, lc, whichreq, repeat, srch){
     if (xhr.readyState == 4 && xhr.status == 200) {
       var linkit = document.createElement('linkit');
       linkit.innerHTML = xhr.responseText;
-      lend = (linkit.innerHTML.search('保管') != -1) ? '<b class="amalin-sub amalin-sub1">保管</b>' : '<b class="amalin-sub amalin-sub2">貸出</b>';
+      lend = (linkit.innerHTML.search('保管') != -1) ? '<b class="amalin-sub amalin-sub1">'+chrome.i18n.getMessage('amalinStatus1')+'</b>' : '<b class="amalin-sub amalin-sub2">'+chrome.i18n.getMessage('amalinStatus0')+'</b>';
       var book = linkit.getElementsByTagName('a')[1];
 
       // LC have this Book.
@@ -111,8 +101,8 @@ function request(isbn, lc, whichreq, repeat, srch){
       ele.setAttribute('class', 'amalin');
       ele.innerHTML = (
           (book == null)
-          ? '<div class="amalin-content amalin-content0">LCに所蔵されていません</div>'
-          : '<a href='+lc+' target="_blank" style="text-decoration: none;"><div class="amalin-content amalin-content1">LCに所蔵されています '+lend+'</div></a>'
+          ? '<div class="amalin-content amalin-content0">'+chrome.i18n.getMessage('amalinLocation0')+'</div>'
+          : '<a href='+lc+' target="_blank" style="text-decoration: none;"><div class="amalin-content amalin-content1">'+chrome.i18n.getMessage('amalinLocation1')+' '+lend+'</div></a>'
       );
 
       // which request?
@@ -144,3 +134,7 @@ function request(isbn, lc, whichreq, repeat, srch){
   }
   xhr.send();
 }
+var nw = '';
+var prf = location.href + location.search;
+AmazonLinkit(prf, nw);
+

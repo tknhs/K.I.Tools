@@ -1,18 +1,14 @@
 {
-    "name": "K.I.Tools",
-    "version": "1.4.4",
+    "default_locale":"ja",
+    "name": "Amalin",
+    "version": "0.1",
     "manifest_version": 2,
-    "minimum_chrome_version": "22",
 
-    "description": "KIT学生にとって便利なツールを提供します",
-    "homepage_url": "http://kit-shuttle-bus.appspot.com",
+    "description": "__MSG_extDesc__",
+    "homepage_url": "https://github.com/tknhs/K.I.Tools",
     "icons": {
       "128": "icon/icon128.png"
     },
-
-    "permissions": [
-      "storage"
-    ],
 
     "content_scripts": [
     {
