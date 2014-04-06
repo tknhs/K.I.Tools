@@ -140,4 +140,3 @@ function request(isbn, lc, whichreq, repeat, srch){
 var nw = '';
 var prf = location.href + location.search;
 AmazonLinkit(prf, nw);
-
