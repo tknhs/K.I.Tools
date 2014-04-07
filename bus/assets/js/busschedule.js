@@ -80,7 +80,7 @@ function ins_bus_time(tt, wh, time) {
       if (remain_time > 0) {
         bus_end+=1;
         if (bus_end == 1) {
-          document.getElementById(terminal_remain_time[two_way]).innerText = remain_time + ' 分';
+          document.getElementById(terminal_remain_time[two_way]).innerText = remain_time + chrome.i18n.getMessage('popupJSRemainingTime');
         }
         var tr = document.createElement('tr');
         var bus_name = document.createElement('td');

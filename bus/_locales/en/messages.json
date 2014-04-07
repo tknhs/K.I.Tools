@@ -10,10 +10,10 @@
     "message": "Settings"
   },
   "optionsLabelBusNotify": {
-    "message": "Departure time notification : version β"
+    "message": "Departure time notification"
   },
   "optionsLabelDepartureBuilding": {
-    "message": "Departure building : Building to be used when the ride from Yatsukaho."
+    "message": "Departure building"
   },
   "optionsSelectOpt1": {
     "message": "#65 Building"
@@ -67,6 +67,10 @@
   "add": {
     "message": ""
   },
+  "popupJSRemainingTime": {
+    "message": " minutes"
+  },
+
 
   "popupJSServiceStatus0": {
     "message": "Today is out of service"

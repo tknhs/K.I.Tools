@@ -1,0 +1,9 @@
+body {
+  background-color: #e8d3c7; /* haiume */
+}
+label {
+  font-size: 150%;
+}
+div.checkbox {
+  padding: 0px;
+}

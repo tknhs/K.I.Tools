@@ -13,10 +13,10 @@
     "description": "オプションページのタイトル"
   },
   "optionsLabelBusNotify": {
-    "message": "時刻通知 : version β"
+    "message": "時刻通知"
   },
   "optionsLabelDepartureBuilding": {
-    "message": "出発号館 : 八束穂から乗車の際に利用する号館"
+    "message": "出発号館"
   },
   "optionsSelectOpt1": {
     "message": "65号館"
@@ -69,6 +69,9 @@
   },
   "add": {
     "message": "の時刻表"
+  },
+  "popupJSRemainingTime": {
+    "message": " 分"
   },
 
   "popupJSServiceStatus0": {

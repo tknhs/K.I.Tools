@@ -7,9 +7,9 @@
   "description": "__MSG_extDesc__",
   "homepage_url": "https://github.com/tknhs/K.I.Tools",
   "icons": {
-    "16": "icon/icon16.png",
-    "48": "icon/icon48.png",
-    "128": "icon/icon128.png"
+    "16": "assets/icon/icon16.png",
+    "48": "assets/icon/icon48.png",
+    "128": "assets/icon/icon128.png"
   },
 
   "permissions": [
@@ -20,16 +20,16 @@
   ],
 
   "browser_action": {
-    "default_icon": "icon/icon38.png",
+    "default_icon": "assets/icon/icon38.png",
     "default_popup": "popup.html"
   },
 
   "background": {
     "scripts": [
-      "js/lib/getnowdate.js",
-      "js/lib/busdata.js",
-      "js/lib/busnotify.js",
-      "js/background.js"
+      "assets/js/lib/getnowdate.js",
+      "assets/js/lib/busdata.js",
+      "assets/js/lib/busnotify.js",
+      "assets/js/background.js"
     ]
   },
 

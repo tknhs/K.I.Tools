@@ -2,36 +2,54 @@
 <html lang='ja'>
 <head>
   <meta charset='utf-8'>
-  <link href='css/options.css' rel='stylesheet' type='text/css'>
-  <link href='css/itoggle.css' rel='stylesheet' type='text/css'>
-  <link href='css/easydropdown.metro.css' rel='stylesheet' type='text/css'>
+  <link href='assets/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+  <link href='assets/css/itoggle.css' rel='stylesheet' type='text/css'>
+  <link href='assets/css/easydropdown.metro.css' rel='stylesheet' type='text/css'>
+  <link href='assets/css/options.css' rel='stylesheet' type='text/css'>
   <title data-resource='optionsTitle'></title>
 </head>
 <body>
-<h1 data-resource='optionsTitle'></h1>
-<hr>
-<br>
-<form id='settings_form' method='post'>
-  <div id='bus' class='page'>
-    <label data-resource='optionsLabelBusNotify'></label>
-    <br>
-    <input type='checkbox' name='bus_notify' id='settings_style' class='save iToggle' data-label-on='on' data-label-off='off'>
-    <br>
-    <label data-resource='optionsLabelDepartureBuilding'></label>
-    <br>
-    <select class='save dropdown' name='bus_building' id='settings_style'>
-      <option value='1' class='save' data-resource='optionsSelectOpt1'></option>
-      <option value='2' class='save' data-resource='optionsSelectOpt2'></option>
-      <option value='3' class='save' data-resource='optionsSelectOpt3'></option>
-    </select>
-  </div>
-</form>
+<div class="container">
+  <div class="row">
+    <section>
+      <div class="col-lg-8 col-lg-offset-2">
+        <div class="page-header">
+          <h2 data-resource='optionsTitle'></h2>
+        </div>
+        <form id="settings_form" method="post" class="form-horizontal">
+          <div class="form-group">
+            <label class='col-lg-5 control-label' data-resource='optionsLabelBusNotify'></label>
+            <div class="col-lg-5">
+              <div class='checkbox'>
+                <label>
+                  <input type='checkbox' name='bus_notify' id='settings_style' class='save iToggle' data-label-on='on' data-label-off='off'>
+                </label>
+              </div>
+            </div>
+          </div>
 
-<script src='js/lib/jquery.min.js'></script>
-<script src='js/lib/jquery.DataSaver.js'></script>
-<script src='js/lib/itoggle.jquery.js'></script>
-<script src='js/lib/jquery.easydropdown.js'></script>
-<script src='js/options.js'></script>
-<script src='js/locales.js'></script>
+          <div class='form-group'>
+            <label class='col-lg-5 control-label' data-resource='optionsLabelDepartureBuilding'></label>
+            <div class='col-lg-5'>
+              <select class='save dropdown' name='bus_building' id='settings_style'>
+                <option value='1' class='save' data-resource='optionsSelectOpt1'></option>
+                <option value='2' class='save' data-resource='optionsSelectOpt2'></option>
+                <option value='3' class='save' data-resource='optionsSelectOpt3'></option>
+              </select>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+  </div>
+</div>
+
+<script src='assets/js/lib/jquery.min.js'></script>
+<script src='assets/js/lib/bootstrap.min.js'></script>
+<script src='assets/js/lib/jquery.DataSaver.js'></script>
+<script src='assets/js/lib/itoggle.jquery.js'></script>
+<script src='assets/js/lib/jquery.easydropdown.js'></script>
+<script src='assets/js/options.js'></script>
+<script src='assets/js/locales.js'></script>
 </body>
 </html>
