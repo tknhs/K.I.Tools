@@ -2,123 +2,125 @@
 <html lang='ja'>
 <head>
   <meta charset='utf-8'>
-  <link href='css/options.css' rel='stylesheet' type='text/css'>
-  <title>設定 - K.I.Tools</title>
+  <link href='assets/css/bootstrap.min.css' rel='stylesheet'>
+  <link href='assets/css/bootstrapValidator.min.css' rel='stylesheet'>
+  <link href='assets/css/ion.tabs.css' rel='stylesheet'>
+  <link href='assets/css/ion.tabs.skinBordered.css' rel='stylesheet'>
+  <link href='assets/css/options.css' rel='stylesheet'>
+  <title>Settings</title>
 </head>
 <body>
-<h1>設定</h1>
-  <div id='tab_menu'>
-    <ul class='tab clear'>
-      <li><a href='#general' class='red' id='tab_general'>一般</a></li>
-      <li><a href='#portal' class='green' id='tab_portal'>ポータル</a></li>
-      <li><a href='#vpn' class='yellow' id='tab_vpn'>VPN</a></li>
-      <li><a href='#bus' class='blue' id='tab_bus'>バス</a></li>
-    </ul>
+<div class="container">
+  <div class="row">
+    <section>
+      <div class="col-lg-8 col-lg-offset-2">
+        <div class="page-header">
+          <h2>設定</h2>
+        </div>
+
+        <div class="ionTabs" id="settings" data-name="tabs_settings">
+          <ul class="ionTabs__head">
+            <li class="ionTabs__tab" data-target="tab_portal">ポータル</li>
+            <li class="ionTabs__tab" data-target="tab_vpn">VPN</li>
+          </ul>
+          <div class="ionTabs__body">
+            <div class="ionTabs__item" data-name="tab_portal">
+              <br>
+              <form id="portal_settings_form" method="post" class="form-horizontal">
+                <div class="form-group">
+                  <label class="col-lg-5 control-label">Username</label>
+                  <div class="col-lg-5">
+                    <input type="text" class="save form-control" name="portal_student_id" placeholder="1234567" />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-lg-5 control-label">Password</label>
+                  <div class="col-lg-5">
+                    <input type="password" class="save form-control" name="portal_password" placeholder="h030519" />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-lg-5 control-label">Retype password</label>
+                  <div class="col-lg-5">
+                    <input type="password" class="save form-control" name="portal_confirmPassword" placeholder="h030109" />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-lg-5 control-label">Pass Phrase</label>
+                  <div class="col-lg-5">
+                    <input type="text" class="save form-control" name="portal_passPhrase" placeholder="Kanazawa Institute of Technology" />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-lg-9 col-lg-offset-5">
+                    <button type="submit" class="btn btn-primary" id='portal_submit' disabled="disabled">Sign up</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <div class="ionTabs__item" data-name="tab_vpn">
+              <br>
+              <form id="vpn_settings_form" method="post" class="form-horizontal">
+                <div class="form-group">
+                  <label class="col-lg-5 control-label">Username</label>
+                  <div class="col-lg-5">
+                    <input type="text" class="save form-control" name="vpn_student_id" placeholder="a1234567" />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-lg-5 control-label">Password</label>
+                  <div class="col-lg-5">
+                    <input type="password" class="save form-control" name="vpn_password" placeholder="h030519" />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-lg-5 control-label">Retype password</label>
+                  <div class="col-lg-5">
+                    <input type="password" class="save form-control" name="vpn_confirmPassword" placeholder="h030109" />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-lg-5 control-label">Mode</label>
+                  <div class="col-lg-5">
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="vpn_mode" class='save' value="Web" /> Web
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="vpn_mode" class='save' value="NetworkConnect" /> NetworkConnect
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-lg-5 control-label">Pass Phrase</label>
+                  <div class="col-lg-5">
+                    <input type="text" class="save form-control" name="vpn_passPhrase" placeholder="Kanazawa Institute of Technology" />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-lg-9 col-lg-offset-5">
+                    <button type="submit" class="btn btn-primary" id='vpn_submit' disabled="disabled">Sign up</button>
+                  </div>
+                </div>
+              </form>
+              <div class="ionTabs__preloader"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
-  <div id='tab_content' class='tab_content'>
-    <!-- Tab General-->
-    <div id='general' class='page'>
-      <fieldset class='field_general'>
-        <legend>有効化 / 無効化</legend>
-        <br>
-        <label for='edportal'>Portal : </label>
-        <input type='checkbox' name='edportal' id='edportal'>
-        <small>※ 学生ポータル，給与明細照会，見積依頼に自動ログイン</small>
-        <br>
-        <label for='edamalin'>AmaLin : </label>
-        <input type='checkbox' name='edamalin' id='edamalin'>
-        <small>※ LCの書籍所蔵状況を Amazon.co.jp に表示</small>
-        <br>
-        <label for='edvpn'>VPN : </label>
-        <input type='checkbox' name='edvpn' id='edvpn'>
-        <small>※ VPN に自動ログイン</small>
-        <br>
-        <label for='edbus'>Bus : </label>
-        <input type='checkbox' name='edbus' id='edbus'>
-        <small>※ シャトルバス時刻通知（β）</small>
-        <br>
-        <label></label>
-        <button id='general_save'>保存</button>
-        <button id='general_delete' disabled='disbaled'>リセット</button>
-        <b id='g_registered'></b>
-      </fieldset>
-    </div>
+</div>
 
-    <!-- Tab Portal -->
-    <div id='portal' class='page'>
-      <fieldset class='registered'>
-        <legend>登録状況</legend>
-        <p id='p_registered'></p>
-      </fieldset>
-      <br>
-      <fieldset class='field_portal'>
-        <legend>登録 / 変更</legend>
-        <br>
-        <label for='kit-id'>学籍番号 : </label>
-        <input type='text' id='kit-id' name='kit-id' placeholder='1234567'>
-        <br>
-        <label for='kit-pass'>パスワード : </label>
-        <input type='password' id='kit-pass' name='kit-pass' placeholder='h030519'>
-        <br>
-        <label></label>
-        <button id='portal_save'>保存</button>
-        <button id='portal_delete'>削除</button>
-      </fieldset>
-    </div>
-
-    <!-- Tab VPN -->
-    <div id='vpn' class='page'>
-      <fieldset class='registered'>
-        <legend>登録状況</legend>
-        <p id='v_registered'></p>
-      </fieldset>
-      <br>
-      <fieldset class='field_vpn'>
-        <legend>登録 / 変更</legend>
-        <br>
-        <label for='vpn-id'>ユーザ ID : </label>
-        <input type='text' id='vpn-id' name='vpn-id' placeholder='a1234567'>
-        <br>
-        <label for='vpn-pass'>パスワード : </label>
-        <input type='password' id='vpn-pass' name='vpn-pass' placeholder='h030519'>
-        <br>
-        <label for='vpn-mode'>モード : </label>
-        <input type='radio' name='vpn-radio' value='Web' checked><small>Web</small>
-        <input type='radio' name='vpn-radio' value='NetworkConnect'><small>NetworkConnect</small>
-        <br>
-        <label></label>
-        <button id='vpn_save'>保存</button>
-        <button id='vpn_delete'>削除</button>
-      </fieldset>
-    </div>
-
-    <!-- Tab Bus -->
-    <div id='bus' class='page'>
-      <fieldset class='registered'>
-        <legend>登録状況</legend>
-        <p id='b_registered'></p>
-      </fieldset>
-      <br>
-      <fieldset class='field_bus'>
-        <legend>登録 / 変更</legend>
-        <br>
-        <label for='building'>出発号館 : </label>
-        <select name='from_yatsukaho'>
-          <option name='fy' value='1'>65号館</option>
-          <option name='fy' value='2'>61号館</option>
-          <option name='fy' value='3'>74号館</option>
-        </select>
-        <small>※ やつかほ から乗車の際に普段利用する号館</small>
-        <br>
-        <label></label>
-        <button id='bus_save'>保存</button>
-      </fieldset>
-    </div>
-  </div>
-
-  <script src='js/lib/cryptico.min.js'></script>
-  <script src='js/lib/tab.js'></script>
-  <script src='js/options.js'></script>
+<script src='assets/js/lib/jquery.min.js'></script>
+<script src='assets/js/lib/bootstrap.min.js'></script>
+<script src='assets/js/lib/bootstrapValidator.min.js'></script>
+<script src='assets/js/lib/jquery.DataSaver.js'></script>
+<script src='assets/js/lib/ion.tabs.js'></script>
+<script src='assets/js/options.js'></script>
 </body>
 </html>
-

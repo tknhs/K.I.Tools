@@ -1,102 +1,13 @@
-/**
- *
- *  Title  : Auto Login for Student Portal
- *  Author : tknhs
- *
- **/
-
 body {
   font-family: 'メイリオ', Meiryo, sans-serif;
-  padding: 10px 50px;
+  background-color: #e8d3c7; /* haiume */
+}
+label.col-lg-5.control-label {
+  font-size: 150%;
 }
 
-label,input[type='text'],input[type='password'] {
-  display: block;
-  width: 100px;
-  float: left;
-  margin-bottom: 10px;
-}
-label {
-  text-align: right;
-  padding-right: 15px;
-}
-br {
-  clear: left;
-}
-
-fieldset {
-  width: 450px;
-}
-fieldset.field_general, fieldset.field_bus, #b_registered{
-  width: 550px;
-}
-fieldset.field_portal label, fieldset.field_vpn label{
-  padding-left: 30px;
-}
-
-.registered p {
-  text-align: center;
-}
-.registered p.red {
-  color: #cc0000;
-  font-weight: bold;
-}
-#g_registered {
-  padding-left: 40px;
-  color: #cc0000;
-}
-
-/* タブ */
-.tab_content {
-  padding: 20px;
-}
-ul.tab {
-  margin: 0;
-  padding: 0;
-  border-bottom: 2px #ddd solid;
-}
-ul.tab li {
-  float: left;
-  margin: 0 0 0 5px;
-  position: relative;
-  bottom: -2px;
-  list-style-type: none;
-  border: 1px #ddd solid;
-  border-top: none;
-  border-bottom: 2px #ddd solid;
-  width:100px;
-  text-align:center;
-}
-ul.tab li.none {
-  border-bottom: 2px #fff solid;
-  background: #eee;
-}
-ul.tab li a {
-  color: #000;
-  display: block;
-  padding: 3px 10px 5px;
-  text-decoration: none;
-}
-ul.tab li a.green {
-  border-top: 5px #4cbb47 solid;
-}
-ul.tab li a.red {
-  border-top: 5px #dd1d25 solid;
-}
-ul.tab li a.yellow {
-  border-top: 5px #ffd242 solid;
-}
-ul.tab li a.blue {
-  border-top: 5px #1E90FF solid;
-}
-/* clerfix */
-.clear:after {
-  content:"";
-  display:block;
-  overflow:hidden;
-  clear: both;
-}
-.clear {
-  zoom:1;
+li#Button__tabs_settings__tab_portal.ionTabs__tab.ionTabs__tab_state_active,
+li#Button__tabs_settings__tab_vpn.ionTabs__tab.ionTabs__tab_state_active {
+  font-size: 125%;
 }
 
