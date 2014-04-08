@@ -18,9 +18,11 @@
 - Licensed under [the BSD 2-Clause license](https://github.com/tknhs/K.I.Tools/blob/master/LICENSE).
 
 ## 使用ライブラリ・プラグイン・素材
-- jQuery         : http://jquery.com/
-- DataSaver      : https://github.com/absentik/DataSaver
-- iToggle        : https://github.com/sebastien-roch/iToggle
-- EasyDropDown   : https://github.com/patrickkunka/easydropdown
-- Ion.Tabs       : https://github.com/IonDen/ion.tabs
-- 小森平の使い方 : http://taira-komori.jpn.org/
+- jQuery             : http://jquery.com/
+- Bootstrap 3        : http://getbootstrap.com/
+- DataSaver          : https://github.com/absentik/DataSaver
+- iToggle            : https://github.com/sebastien-roch/iToggle
+- EasyDropDown       : https://github.com/patrickkunka/easydropdown
+- Ion.Tabs           : https://github.com/IonDen/ion.tabs
+- BootstrapValidator : https://github.com/nghuuphuoc/bootstrapvalidator
+- 小森平の使い方     : http://taira-komori.jpn.org/
