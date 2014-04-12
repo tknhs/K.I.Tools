@@ -1,3 +1,16 @@
+(function(){
+  // 拡張機能インストール・更新
+  var extension_version = JSON.stringify(chrome.app.getDetails().version);
+  if (localStorage['extension_version'] === undefined) {
+    // インストール時
+    localStorage['extension_version'] = extension_version;
+    chrome.tabs.create({url:'chrome-extension://' + chrome.app.getDetails().id + '/options.html'});
+  } else if (localStorage['extension_version'] != extension_version){
+    // 更新時
+    localStorage['extension_version'] = extension_version;
+  }
+})();
+
 /**
  * 暗号化／復号化
  **/

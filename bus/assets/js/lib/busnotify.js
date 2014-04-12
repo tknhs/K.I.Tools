@@ -22,13 +22,13 @@ var BusNotification = {
           if (latitude<geo.lat && longitude<geo.lon) {
             var my_location = '八束穂→扇が丘';
             var disp_location = chrome.i18n.getMessage('popupTabLocationYatsukaho');
-            var my_img = '../../icon/bus1.png';
+            var my_img = 'assets/icon/bus1.png';
             var arrival_id = (localStorage['bus_building'] === undefined) ? 1 : JSON.parse(localStorage['bus_building']);
             var departure_id = 4;
           } else {
             var my_location = '扇が丘→八束穂';
             var disp_location = chrome.i18n.getMessage('popupTabLocationOhgi');
-            var my_img = '../../icon/bus2.png';
+            var my_img = 'assets/icon/bus2.png';
             var arrival_id = 1;
             var departure_id = (localStorage['bus_building'] === undefined) ? 1 : JSON.parse(localStorage['bus_building']);
             departure_id = Math.abs(departure_id - 5);
@@ -40,7 +40,7 @@ var BusNotification = {
             var bus_time = Number(bus_min[0])*60 + Number(bus_min[1]);
             if (bus_time - _time == 10) {
               // 通知
-              var audio = new Audio('../../sound/Crrect_answer3.mp3');
+              var audio = new Audio('assets/sound/Crrect_answer3.mp3');
               audio.volume = 0.1;
               var notify = webkitNotifications.createNotification(
                 my_img,
