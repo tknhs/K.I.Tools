@@ -58,21 +58,19 @@ function bestsellers_page(){
   return b_isbn;
 }
 
-function search_page(){
-  var divtag = document.getElementsByTagName('div');
+function search_page() {
+  var rslt = $('div[id^=result_] ul.rsltGridList.grey');
   var d_id = new Array();
   var d_isbn = new Array();
   var cnt = 0;
-  for (var i = 0; i < divtag.length; i++){
-    if (divtag[i].id.search('result_[0-9]*') != -1){
-      if (divtag[i].outerHTML.search('name=\"\([0-9]+)(X)?\"') != -1){
-        d_id[cnt] = divtag[i].id;
-        d_isbn[cnt] = RegExp.$1 + RegExp.$2;
-        cnt++;
-      }
+  for (var i=0; i<rslt.length; i+=1) {
+    if (rslt[i].outerHTML.search('\/dp\/([0-9]+)(X)?') != -1) {
+      d_id[cnt] = rslt[i].parentNode.id;
+      d_isbn[cnt] = RegExp.$1 + RegExp.$2;
+      cnt += 1;
     }
   }
-  return {id : d_id, isbn : d_isbn};
+  return {id: d_id, isbn: d_isbn};
 }
 
 function request(isbn, lc, whichreq, repeat, srch){
@@ -123,9 +121,7 @@ function request(isbn, lc, whichreq, repeat, srch){
       }
       else if (wr == 1){
         /* search result page */
-        if ($('#'+sp.id[rep]).attr('name') == sp.isbn[rep]){
-          $('#'+sp.id[rep]+' h3.newaps').append(ele);
-        }
+        $('#'+sp.id[rep]+' h3.newaps').append(ele);
       }
       else if (wr == 2){
         /* bestsellers page */
