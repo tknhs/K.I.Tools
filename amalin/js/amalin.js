@@ -17,25 +17,38 @@ function AmazonLinkit(prf, nw){
     var lc;
     var lc_url = 'http://linkit.kanazawa-it.ac.jp/opac/cgi/searchS.cgi?AC=1&SC=F&RI10=IB&SW10=';
 
-    if (local_url.search('/(dp|gp|exec\/obidos\/ASIN)(\/product)?\/([0-9]+)(X)?') != -1){
-      /* a book page */
+    if (local_url.search('/(dp|gp|exec\/obidos\/ASIN)(\/product)?\/([0-9]+)(X)?') != -1) {
+      /* a book page (paper) */
       isbn = RegExp.$3 + RegExp.$4;
       lc = lc_url + isbn;
-      request(isbn, lc, 0);
+      request(isbn, lc, 0, 0, 0, 'paper');
     }
-    if (local_url.search('(/s)[/|?]*') != -1){
+    else if (local_url.search('/(dp|gp|exec\/obidos\/ASIN)(\/product)?\/([A-Z0-9]+)') != -1) {
+      /* a book page (kindle) */
+      var format = $('div.cBox.dkBlueBox table tbody');
+      for (var i=0; i<format.length; i+=1) {
+        if (format[i].id != 'kindle_meta_binding_winner') {
+          var isbn = format[i].firstElementChild.id;
+          isbn = isbn.replace('tmm_', '');
+          lc = lc_url + isbn;
+          request(isbn, lc, 0, 0, 0, 'kindle');
+        }
+      }
+    }
+    if (local_url.search('(/s)[/|?]*') != -1) {
       /* search results page */
       var sp = search_page();
-      $.each(sp.id, function(i){
+      $.each(sp.id, function(i) {
         isbn = sp.isbn[i];
         lc = lc_url + isbn;
+        console.log(isbn);
         request(isbn, lc, 1, i, sp);
       });
     }
-    if (local_url.search('/gp/bestsellers/books/') != -1){
+    if (local_url.search('/gp/bestsellers/books/') != -1) {
       /* bestsellers page */
       var isbns = bestsellers_page();
-      $.each(isbns, function(i){
+      $.each(isbns, function(i) {
         isbn = isbns[i];
         lc = lc_url + isbn;
         if (isbn != '') request(isbn, lc, 2, i);
@@ -45,10 +58,10 @@ function AmazonLinkit(prf, nw){
   setTimeout(function(){ AmazonLinkit(prf, nw); }, 1500);
 }
 
-function bestsellers_page(){
+function bestsellers_page() {
   var bestitems = document.getElementsByClassName('zg_itemRightDiv_normal');
   var b_isbn = new Array();
-  for (var i=0; i<bestitems.length; i++){
+  for (var i=0; i<bestitems.length; i++) {
     if (bestitems[i].children[1].innerHTML.search('/dp/([0-9]+)(X)?') != -1){
       b_isbn[i] = RegExp.$1 + RegExp.$2;
     } else {
@@ -59,21 +72,25 @@ function bestsellers_page(){
 }
 
 function search_page() {
+  var kindle_asin = $('div[id^=result_]');
   var rslt = $('div[id^=result_] ul.rsltGridList.grey');
   var d_id = new Array();
   var d_isbn = new Array();
+  var d_asin = new Array();
   var cnt = 0;
   for (var i=0; i<rslt.length; i+=1) {
     if (rslt[i].outerHTML.search('\/dp\/([0-9]+)(X)?') != -1) {
       d_id[cnt] = rslt[i].parentNode.id;
       d_isbn[cnt] = RegExp.$1 + RegExp.$2;
+      kindle_asin[i].outerHTML.search('name=\"\([A-Z0-9]+)\"');
+      d_asin[cnt] = RegExp.$1;
       cnt += 1;
     }
   }
-  return {id: d_id, isbn: d_isbn};
+  return {id: d_id, isbn: d_isbn, asin: d_asin};
 }
 
-function request(isbn, lc, whichreq, repeat, srch){
+function request(isbn, lc, whichreq, repeat, srch, type) {
   /**
    *  XMLHttpRequest
    *  @param lc       : required
@@ -84,6 +101,7 @@ function request(isbn, lc, whichreq, repeat, srch){
   var wr = whichreq;
   var rep = (repeat === undefined) ? 0 : repeat;
   var sp = (srch === undefined) ? 0 : srch;
+  var book_type = type;
 
   var xhr = new XMLHttpRequest();
   xhr.open('GET', url, true);
@@ -106,24 +124,32 @@ function request(isbn, lc, whichreq, repeat, srch){
       );
 
       // which request?
-      if (wr == 0){
+      if (wr == 0) {
         /* book page */
         var i = 0;
         var nodelist = $('.buying');
-        for (var nl = 0; nl < nodelist.length; nl++){
-          if (nodelist[nl].id == ''){
-            i++;
-            if (i == 2){
-              nodelist[nl].parentNode.insertBefore(ele, nodelist[nl]);
+        if (book_type == 'paper') {
+          for (var nl = 0; nl < nodelist.length; nl++) {
+            if (nodelist[nl].id == '') {
+              i++;
+              if (i == 2) {
+                nodelist[nl].parentNode.insertBefore(ele, nodelist[nl]);
+              }
             }
           }
         }
+        else if (book_type == 'kindle') {
+          $('div.buying#priceBlock').prepend(ele);
+        }
       }
-      else if (wr == 1){
+      else if (wr == 1) {
         /* search result page */
-        $('#'+sp.id[rep]+' h3.newaps').append(ele);
+        if ($('#'+sp.id[rep]).attr('name') == sp.asin[rep]) {
+          // asinコードが一致しているか
+          $('#'+sp.id[rep]+' h3.newaps').append(ele);
+        }
       }
-      else if (wr == 2){
+      else if (wr == 2) {
         /* bestsellers page */
         var parent_ele = document.getElementsByClassName('zg_itemRightDiv_normal')[rep];
         parent_ele.insertBefore(ele, parent_ele.children[3]);
