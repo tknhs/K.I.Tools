@@ -5,7 +5,7 @@ label {
   font-size: 150%;
 }
 div.form-group {
-  height: 45px;
+  height: 50px;
 }
 
 div.checkbox {
@@ -26,4 +26,10 @@ button#play_sound {
   position: absolute;
   right: 20px;
   bottom: 5px;
+}
+
+input[name=notify_minutes] {
+  display: inline-block;
+  height: 37px;
+  width: 50px;
 }

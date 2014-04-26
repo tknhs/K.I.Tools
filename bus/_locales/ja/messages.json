@@ -18,6 +18,12 @@
   "optionsLabelBusNotifySoundVolume": {
     "message": "通知音"
   },
+  "optionsLabelBusNotifyMinutesAgo": {
+    "message": "通知時刻"
+  },
+  "optionsLabelBusNotifyMinutesAgo2": {
+    "message": "分前"
+  },
   "optionsLabelDepartureBuilding": {
     "message": "出発号館"
   },

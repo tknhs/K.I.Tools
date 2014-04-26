@@ -15,6 +15,12 @@
   "optionsLabelBusNotifySoundVolume": {
     "message": "Volume of notification"
   },
+  "optionsLabelBusNotifyMinutesAgo": {
+    "message": "Notification time"
+  },
+  "optionsLabelBusNotifyMinutesAgo2": {
+    "message": "minutes ago"
+  },
   "optionsLabelDepartureBuilding": {
     "message": "Departure building"
   },

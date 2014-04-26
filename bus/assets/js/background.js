@@ -30,6 +30,7 @@ function bus_notify_checker(notify_status) {
     localStorage['bus_notify'] = true;
     localStorage['bus_building'] = 1;
     localStorage['notify_volume'] = 0.1;
+    localStorage['notify_minutes'] = 10;
     chrome.tabs.create({url:'chrome-extension://' + chrome.app.getDetails().id + '/options.html'});
   } else if (localStorage['extension_version'] != extension_version){
     // 更新時
