@@ -7,107 +7,107 @@
   <link href='assets/css/ion.tabs.css' rel='stylesheet'>
   <link href='assets/css/ion.tabs.skinBordered.css' rel='stylesheet'>
   <link href='assets/css/options.css' rel='stylesheet'>
-  <title>Settings</title>
+  <title data-resource='optionsTitle'></title>
 </head>
 <body>
-<div class="container">
-  <div class="row">
+<div class='container'>
+  <div class='row'>
     <section>
-      <div class="col-lg-8 col-lg-offset-2">
-        <div class="page-header">
-          <h2>設定</h2>
+      <div class='col-lg-8 col-lg-offset-2'>
+        <div class='page-header'>
+          <h2 data-resource='optionsTitle'></h2>
         </div>
 
-        <div class="ionTabs" id="settings" data-name="tabs_settings">
-          <ul class="ionTabs__head">
-            <li class="ionTabs__tab" data-target="tab_portal">ポータル</li>
-            <li class="ionTabs__tab" data-target="tab_vpn">VPN</li>
+        <div class='ionTabs' id='settings' data-name='tabs_settings'>
+          <ul class='ionTabs__head'>
+            <li class='ionTabs__tab' data-target='tab_portal' data-resource='optionsTabPortal'></li>
+            <li class='ionTabs__tab' data-target='tab_vpn' data-resource='optionsTabVPN'></li>
           </ul>
-          <div class="ionTabs__body">
-            <div class="ionTabs__item" data-name="tab_portal">
+          <div class='ionTabs__body'>
+            <div class='ionTabs__item' data-name='tab_portal'>
               <br>
-              <form id="portal_settings_form" method="post" class="form-horizontal">
-                <div class="form-group">
-                  <label class="col-lg-5 control-label">Username</label>
-                  <div class="col-lg-5">
-                    <input type="text" class="save form-control" name="portal_student_id" placeholder="1234567" />
+              <form id='portal_settings_form' method='post' class='form-horizontal'>
+                <div class='form-group'>
+                  <label class='col-lg-5 control-label' data-resource='optionsLabelStudentId'></label>
+                  <div class='col-lg-5'>
+                    <input type='text' class='save form-control' name='portal_student_id' placeholder='1234567' />
                   </div>
                 </div>
-                <div class="form-group">
-                  <label class="col-lg-5 control-label">Password</label>
-                  <div class="col-lg-5">
-                    <input type="password" class="save form-control" name="portal_password" placeholder="h030519" />
+                <div class='form-group'>
+                  <label class='col-lg-5 control-label' data-resource='optionsLabelPassword'></label>
+                  <div class='col-lg-5'>
+                    <input type='password' class='save form-control' name='portal_password' placeholder='h030519' />
                   </div>
                 </div>
-                <div class="form-group">
-                  <label class="col-lg-5 control-label">Retype password</label>
-                  <div class="col-lg-5">
-                    <input type="password" class="save form-control" name="portal_confirmPassword" placeholder="h030109" />
+                <div class='form-group'>
+                  <label class='col-lg-5 control-label' data-resource='optionsLabelRetypePassword'></label>
+                  <div class='col-lg-5'>
+                    <input type='password' class='save form-control' name='portal_confirmPassword' placeholder='h030519' />
                   </div>
                 </div>
-                <div class="form-group">
-                  <label class="col-lg-5 control-label">Pass Phrase</label>
-                  <div class="col-lg-5">
-                    <input type="text" class="save form-control" name="portal_passPhrase" placeholder="Kanazawa Institute of Technology" />
+                <div class='form-group'>
+                  <label class='col-lg-5 control-label' data-resource='optionsLabelPassPhrase'></label>
+                  <div class='col-lg-5'>
+                    <input type='text' class='save form-control' name='portal_passPhrase' placeholder='Kanazawa Institute of Technology' />
                   </div>
                 </div>
-                <div class="form-group">
-                  <div class="col-lg-9 col-lg-offset-5">
-                    <button type="submit" class="btn btn-primary" id='portal_submit' disabled="disabled">Sign up</button>
+                <div class='form-group'>
+                  <div class='col-lg-9 col-lg-offset-5'>
+                    <button type='submit' class='btn btn-primary' id='portal_submit' disabled='disabled' data-resource='optionsLabelSubmit'></button>
                   </div>
                 </div>
               </form>
             </div>
 
-            <div class="ionTabs__item" data-name="tab_vpn">
+            <div class='ionTabs__item' data-name='tab_vpn'>
               <br>
-              <form id="vpn_settings_form" method="post" class="form-horizontal">
-                <div class="form-group">
-                  <label class="col-lg-5 control-label">Username</label>
-                  <div class="col-lg-5">
-                    <input type="text" class="save form-control" name="vpn_student_id" placeholder="a1234567" />
+              <form id='vpn_settings_form' method='post' class='form-horizontal'>
+                <div class='form-group'>
+                  <label class='col-lg-5 control-label' data-resource='optionsLabelStudentId'></label>
+                  <div class='col-lg-5'>
+                    <input type='text' class='save form-control' name='vpn_student_id' placeholder='a1234567' />
                   </div>
                 </div>
-                <div class="form-group">
-                  <label class="col-lg-5 control-label">Password</label>
-                  <div class="col-lg-5">
-                    <input type="password" class="save form-control" name="vpn_password" placeholder="h030519" />
+                <div class='form-group'>
+                  <label class='col-lg-5 control-label' data-resource='optionsLabelPassword'></label>
+                  <div class='col-lg-5'>
+                    <input type='password' class='save form-control' name='vpn_password' placeholder='h030519' />
                   </div>
                 </div>
-                <div class="form-group">
-                  <label class="col-lg-5 control-label">Retype password</label>
-                  <div class="col-lg-5">
-                    <input type="password" class="save form-control" name="vpn_confirmPassword" placeholder="h030109" />
+                <div class='form-group'>
+                  <label class='col-lg-5 control-label' data-resource='optionsLabelRetypePassword'></label>
+                  <div class='col-lg-5'>
+                    <input type='password' class='save form-control' name='vpn_confirmPassword' placeholder='h030519' />
                   </div>
                 </div>
-                <div class="form-group">
-                  <label class="col-lg-5 control-label">Mode</label>
-                  <div class="col-lg-5">
-                    <div class="radio">
+                <div class='form-group'>
+                  <label class='col-lg-5 control-label' data-resource='optionsLabelMode'></label>
+                  <div class='col-lg-5'>
+                    <div class='radio'>
                       <label>
-                        <input type="radio" name="vpn_mode" class='save' value="Web" /> Web
+                        <input type='radio' name='vpn_mode' class='save' value='Web' /> Web
                       </label>
                     </div>
-                    <div class="radio">
+                    <div class='radio'>
                       <label>
-                        <input type="radio" name="vpn_mode" class='save' value="NetworkConnect" /> NetworkConnect
+                        <input type='radio' name='vpn_mode' class='save' value='NetworkConnect' /> NetworkConnect
                       </label>
                     </div>
                   </div>
                 </div>
-                <div class="form-group">
-                  <label class="col-lg-5 control-label">Pass Phrase</label>
-                  <div class="col-lg-5">
-                    <input type="text" class="save form-control" name="vpn_passPhrase" placeholder="Kanazawa Institute of Technology" />
+                <div class='form-group'>
+                  <label class='col-lg-5 control-label' data-resource='optionsLabelPassPhrase'></label>
+                  <div class='col-lg-5'>
+                    <input type='text' class='save form-control' name='vpn_passPhrase' placeholder='Kanazawa Institute of Technology' />
                   </div>
                 </div>
-                <div class="form-group">
-                  <div class="col-lg-9 col-lg-offset-5">
-                    <button type="submit" class="btn btn-primary" id='vpn_submit' disabled="disabled">Sign up</button>
+                <div class='form-group'>
+                  <div class='col-lg-9 col-lg-offset-5'>
+                    <button type='submit' class='btn btn-primary' id='vpn_submit' disabled='disabled' data-resource='optionsLabelSubmit'></button>
                   </div>
                 </div>
               </form>
-              <div class="ionTabs__preloader"></div>
+              <div class='ionTabs__preloader'></div>
             </div>
           </div>
         </div>
@@ -122,5 +122,6 @@
 <script src='assets/js/lib/jquery.DataSaver.js'></script>
 <script src='assets/js/lib/ion.tabs.js'></script>
 <script src='assets/js/options.js'></script>
+<script src='assets/js/locales.js'></script>
 </body>
 </html>

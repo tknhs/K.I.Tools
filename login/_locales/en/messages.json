@@ -1,0 +1,40 @@
+{
+  "extName": {
+    "message": "Auto Login"
+  },
+  "extDesc": {
+    "message": "Kanazawa Insutitute Of Technology -Unofficial-"
+  },
+
+  "optionsTitle": {
+    "message": "Settings"
+  },
+  "optionsTabPortal": {
+    "message": "Portal"
+  },
+  "optionsTabVPN": {
+    "message": "VPN"
+  },
+  "optionsLabelStudentId": {
+    "message": "Student ID"
+  },
+  "optionsLabelPassword": {
+    "message": "Password"
+  },
+  "optionsLabelRetypePassword": {
+    "message": "Retype Password"
+  },
+  "optionsLabelPassPhrase": {
+    "message": "Pass Phrase"
+  },
+  "optionsLabelSubmit": {
+    "message": "Sign Up"
+  },
+  "optionsLabelMode": {
+    "message": "Mode"
+  },
+
+  "optionsRegistered": {
+    "message": "Registered"
+  }
+}

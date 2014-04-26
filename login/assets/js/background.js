@@ -16,7 +16,7 @@
  **/
 function EncDec(PV) {
   this.pv = PV;
-  var keyword = localStorage[this.pv + 'passPhrase'];
+  var keyword = localStorage[this.pv + 'passPhrase2'];
   var bits = 1024;
   this.RSAkey = cryptico.generateRSAKey(keyword, bits);
   this.encData;

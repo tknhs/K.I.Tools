@@ -14,12 +14,14 @@ function autoSaveForm() {
 function generateEncryptPassword(portal_or_vpn) {
   var pv = portal_or_vpn;
   $('#'+pv).attr('disabled','disabled');
-  $('#'+pv).text('登録完了');
   pv = pv.replace('submit', '');
   chrome.runtime.getBackgroundPage(function(backgroundPage) {
+    localStorage[pv + 'passPhrase2'] = localStorage[pv + 'passPhrase'];
+    localStorage.removeItem(pv + 'passPhrase');
     localStorage[pv + 'encryptPassword'] = backgroundPage.generate('enc', pv);
     localStorage.removeItem(pv + 'password');
     localStorage.removeItem(pv + 'confirmPassword');
+    alert(chrome.i18n.getMessage('optionsRegistered'));
   });
 }
 
@@ -28,7 +30,7 @@ function generateEncryptPassword(portal_or_vpn) {
  **/
 function validatorForm() {
   $('#portal_settings_form').bootstrapValidator({
-    message: 'This value is not valid',
+    message: 'Not valid',
     feedbackIcons: {
       valid: 'glyphicon glyphicon-ok',
       invalid: 'glyphicon glyphicon-remove',
@@ -41,38 +43,38 @@ function validatorForm() {
       portal_student_id: {
         validators: {
           notEmpty: {
-            message: 'The StudentId is required and can\'t be empty'
+            message: 'Required and can\'t be empty'
           },
           stringLength: {
             min: 7,
             max: 7,
-            message: 'The StudentId must be 7 characters long'
+            message: '7 characters long'
           },
           regexp: {
             regexp: /^[0-9]+$/,
-            message: 'The StudentId can only consist of number'
+            message: 'Only consist of number'
           }
         }
       },
       portal_password: {
         validators: {
           notEmpty: {
-            message: 'The password is required and can\'t be empty'
+            message: 'Required and can\'t be empty'
           },
           identical: {
             field: 'portal_confirmPassword',
-            message: 'The password and its confirm are not the same'
+            message: 'Not the same'
           }
         }
       },
       portal_confirmPassword: {
         validators: {
           notEmpty: {
-            message: 'The confirm password is required and can\'t be empty'
+            message: 'Required and can\'t be empty'
           },
           identical: {
             field: 'portal_password',
-            message: 'The password and its confirm are not the same'
+            message: 'Not the same'
           }
         }
       },
@@ -80,7 +82,7 @@ function validatorForm() {
   });
 
   $('#vpn_settings_form').bootstrapValidator({
-    message: 'This value is not valid',
+    message: 'Not valid',
     feedbackIcons: {
       valid: 'glyphicon glyphicon-ok',
       invalid: 'glyphicon glyphicon-remove',
@@ -93,45 +95,45 @@ function validatorForm() {
       vpn_student_id: {
         validators: {
           notEmpty: {
-            message: 'The StudentId is required and can\'t be empty'
+            message: 'Required and can\'t be empty'
           },
           stringLength: {
             min: 8,
             max: 8,
-            message: 'The StudentId must be 8 characters long'
+            message: '8 characters long'
           },
           regexp: {
             regexp: /^a[0-9]+$/,
-            message: 'The StudentId can only consist of \'a\' + number'
+            message: 'Only consist of \'a\' + number'
           }
         }
       },
       vpn_password: {
         validators: {
           notEmpty: {
-            message: 'The password is required and can\'t be empty'
+            message: 'Required and can\'t be empty'
           },
           identical: {
             field: 'vpn_confirmPassword',
-            message: 'The password and its confirm are not the same'
+            message: 'Not the same'
           }
         }
       },
       vpn_confirmPassword: {
         validators: {
           notEmpty: {
-            message: 'The confirm password is required and can\'t be empty'
+            message: 'Required and can\'t be empty'
           },
           identical: {
             field: 'vpn_password',
-            message: 'The password and its confirm are not the same'
+            message: 'Not the same'
           }
         }
       },
       vpn_mode: {
         validators: {
           notEmpty: {
-            message: 'The gender is required'
+            message: 'Required'
           }
         }
       }
