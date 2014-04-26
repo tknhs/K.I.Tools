@@ -5,7 +5,7 @@
  *
  **/
 
-var bus_data = {
+var BusData = {
   update: function(num) {
     /**
      * Update the Bus Schedule
@@ -28,16 +28,16 @@ var bus_data = {
     var today = date_today;
     if (localStorage['bus_checked_date'] === undefined) {
       // first time
-      var timetable = JSON.stringify(bus_data.update(0));
-      var servicetable = JSON.stringify(bus_data.update(1));
+      var timetable = JSON.stringify(this.update(0));
+      var servicetable = JSON.stringify(this.update(1));
       localStorage['timetable'] = timetable;
       localStorage['servicetable'] = servicetable;
       localStorage['bus_checked_date'] = today;
     }
     if (localStorage['bus_checked_date'] < today) {
       // get the data per day
-      var timetable = JSON.stringify(bus_data.update(0));
-      var servicetable = JSON.stringify(bus_data.update(1));
+      var timetable = JSON.stringify(this.update(0));
+      var servicetable = JSON.stringify(this.update(1));
       if (JSON.parse(localStorage['timetable']).version != timetable.version) {
         localStorage['timetable'] = timetable;
       }

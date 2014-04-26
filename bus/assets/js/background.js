@@ -2,11 +2,11 @@
  * バス通知チェッカー
  **/
 function bus_notify_checker(notify_status) {
-  var startStop = notify_status;
+  var start_stop = notify_status;  // 'start' or 'stop'
   var notify_bool = JSON.parse(localStorage['bus_notify']);
-  var bus = BusNotification;
+  var bus = BusNotification;  // from 'assets/js/lib/busnotify.js'
 
-  if (notify_bool && startStop === 'start') {
+  if (notify_bool && start_stop === 'start') {
     var check = bus.time_checker();
     if (check !== false) {
       check = bus.bus_checker(check[0], check[1]);
@@ -16,7 +16,7 @@ function bus_notify_checker(notify_status) {
     }
     timer_id = setTimeout(function(){ bus_notify_checker('start'); }, 60*1000);
   }
-  if (notify_bool === false && startStop === 'stop'){
+  if (notify_bool === false && start_stop === 'stop'){
     clearTimeout(timer_id);
   }
 }
@@ -27,8 +27,9 @@ function bus_notify_checker(notify_status) {
   if (localStorage['extension_version'] === undefined) {
     // インストール時
     localStorage['extension_version'] = extension_version;
-    localStorage['bus_notify'] = false;
+    localStorage['bus_notify'] = true;
     localStorage['bus_building'] = 1;
+    localStorage['notify_volume'] = 0.1;
     chrome.tabs.create({url:'chrome-extension://' + chrome.app.getDetails().id + '/options.html'});
   } else if (localStorage['extension_version'] != extension_version){
     // 更新時
@@ -38,7 +39,7 @@ function bus_notify_checker(notify_status) {
   // バスデータの更新チェック
   var date_today = now_date()[0];
   if (localStorage['bus_checked_date'] != date_today || localStorage['bus_checked_date'] === undefined) {
-    bus_data.update_check(date_today);
+    BusData.update_check(date_today);
   }
 
   // 扇が丘・やつかほの分断位置を保存

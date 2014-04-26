@@ -4,6 +4,26 @@ body {
 label {
   font-size: 150%;
 }
+div.form-group {
+  height: 45px;
+}
+
 div.checkbox {
   padding: 0px;
+}
+div.fsslider, div.dropdown{
+  height: 37px;
+}
+div.fsslider > .fsfull-value {
+  background: #fff;
+}
+
+div.notify_volume {
+  display: inline-block;
+  width: 250px;
+}
+button#play_sound {
+  position: absolute;
+  right: 20px;
+  bottom: 5px;
 }

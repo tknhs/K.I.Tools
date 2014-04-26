@@ -49,8 +49,37 @@ function dropDownSelect() {
   $('li').eq(selectedNumber).addClass('active');
 }
 
+/**
+ * Fresh Slider
+ **/
+function freshSlider() {
+  $('.notify_volume').freshslider({
+    step: 0.1,
+    max: 1.0,
+    min: 0.0,
+    value: localStorage['notify_volume'],
+    onchange: function(volume) {
+      var e = $.Event('keyup');
+      e.keyCode = 40;
+      $('input[name=notify_volume]').trigger(e);
+      var num = Math.round(volume * 10) / 10
+      $('input[name=notify_volume]').val(num);
+    }
+  });
+}
+
+/**
+ * Play Notify Sound
+ **/
+$('#play_sound').click(function() {
+  var audio = new Audio('/assets/sound/Crrect_answer3.mp3');
+  audio.volume = localStorage['notify_volume'];
+  audio.play();
+});
+
 $(document).ready(function() {
   autoSaveForm();
   onOffToggle();
   dropDownSelect();
+  freshSlider();
 });

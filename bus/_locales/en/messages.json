@@ -12,6 +12,9 @@
   "optionsLabelBusNotify": {
     "message": "Departure time notification"
   },
+  "optionsLabelBusNotifySoundVolume": {
+    "message": "Volume of notification"
+  },
   "optionsLabelDepartureBuilding": {
     "message": "Departure building"
   },

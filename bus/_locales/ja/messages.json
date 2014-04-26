@@ -15,6 +15,9 @@
   "optionsLabelBusNotify": {
     "message": "時刻通知"
   },
+  "optionsLabelBusNotifySoundVolume": {
+    "message": "通知音"
+  },
   "optionsLabelDepartureBuilding": {
     "message": "出発号館"
   },

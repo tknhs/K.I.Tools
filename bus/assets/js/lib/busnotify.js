@@ -41,7 +41,7 @@ var BusNotification = {
             if (bus_time - _time == 10) {
               // 通知
               var audio = new Audio('assets/sound/Crrect_answer3.mp3');
-              audio.volume = 0.1;
+              audio.volume = localStorage['notify_volume'];
               var notify = webkitNotifications.createNotification(
                 my_img,
                 disp_location,
