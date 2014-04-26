@@ -25,4 +25,5 @@
 - EasyDropDown       : https://github.com/patrickkunka/easydropdown
 - Ion.Tabs           : https://github.com/IonDen/ion.tabs
 - BootstrapValidator : https://github.com/nghuuphuoc/bootstrapvalidator
+- Fresh Slider JS    : https://github.com/tuanchauict/freshsliderjs
 - 小森平の使い方     : http://taira-komori.jpn.org/
