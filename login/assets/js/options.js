@@ -23,6 +23,7 @@ function generateEncryptPassword(portal_or_vpn) {
     localStorage.removeItem(pv + 'confirmPassword');
     alert(chrome.i18n.getMessage('optionsRegistered'));
   });
+  location.reload();
 }
 
 /**
