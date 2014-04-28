@@ -2,16 +2,16 @@
 - KIT学生にとって便利なChrome拡張機能集
 
 ## 拡張機能一覧
-- **[自動ログイン]()**
+- **[自動ログイン](https://chrome.google.com/webstore/detail/kit-%E8%87%AA%E5%8B%95%E3%83%AD%E3%82%B0%E3%82%A4%E3%83%B3/dpldfhjnkmhginfhfifinhfgdggdonbm)**
     > 学生ポータル，VPN，給与明細照会，見積依頼に自動ログイン
 
-- **[カレンダー同期]()**
+- **[カレンダー同期](https://chrome.google.com/webstore/detail/kit-%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC/gomopbblpljlcpohemgckafbifhmmejn)**
     > 大学のカレンダーをグーグルカレンダーに同期
 
-- **[AmaLin]()**
+- **[AmaLin](https://chrome.google.com/webstore/detail/kit-%E3%82%A2%E3%83%9E%E3%83%AA%E3%83%B3/ennglmpklflipgaaofhmcckfhjanblej)**
     > Amazonで本を検索した際、ライブラリーセンターの蔵書状態を表示
 
-- **[シャトルバス]()**
+- **[シャトルバス](https://chrome.google.com/webstore/detail/kit-%E3%82%B7%E3%83%A3%E3%83%88%E3%83%AB%E3%83%90%E3%82%B9/kfnnajflenpohiclcfglbegfnfpcneba)**
     > 扇が丘と八束穂を結ぶシャトルバスの時刻表閲覧・通知
 
 ## ライセンス
