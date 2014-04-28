@@ -1,0 +1,41 @@
+{
+  "extName": {
+    "message": "K.I.T. Calendar"
+  },
+  "extDesc": {
+    "message": "Kanazawa Insutitute Of Technology -Unofficial-"
+  },
+
+  "backgroundAlert": {
+    "message": "Already authenticated"
+  },
+
+  "optionsTitle": {
+    "message": "Settings"
+  },
+  "optionsH1": {
+    "message": "Sync Calendar"
+  },
+  "optionsH3": {
+    "message": "Google Calendar Sync Using Google API"
+  },
+  "optionsButton": {
+    "message": "　　　　Auth　　　　"
+  },
+
+  "calendarDate": {
+    "message": "Event Date"
+  },
+  "calendarName": {
+    "message": "Event Name"
+  },
+  "calendarJsSync": {
+    "message": "Sync..."
+  },
+  "calendarJsNotFound": {
+    "message": "New Event Not Found"
+  },
+  "calendarJsFound": {
+    "message": " Events Found"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "extName": {
+    "message": "K.I.T. アマリン"
+  },
+  "extDesc":{
+    "message": "金沢工業大学 -非公式-"
+  },
+  "amalinStatus0": {
+    "message": "貸出"
+  },
+  "amalinStatus1": {
+    "message": "保管"
+  },
+  "amalinLocation0": {
+    "message": "LCに所蔵されていません"
+  },
+  "amalinLocation1": {
+    "message": "LCに所蔵されています"
+  }
+}

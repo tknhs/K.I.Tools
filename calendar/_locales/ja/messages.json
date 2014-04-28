@@ -1,0 +1,44 @@
+{
+  "extName": {
+    "message": "K.I.T. カレンダー",
+    "description": "拡張機能名称"
+  },
+  "extDesc": {
+    "message": "金沢工業大学 -非公式-",
+    "description": "拡張機能説明"
+  },
+
+  "backgroundAlert": {
+    "message": "認証済みです"
+  },
+
+  "optionsTitle": {
+    "message": "設定",
+    "description": "オプションページのタイトル"
+  },
+  "optionsH1": {
+    "message": "カレンダー同期"
+  },
+  "optionsH3": {
+    "message": "Google Calendar API で同期"
+  },
+  "optionsButton": {
+    "message": "　　　　認証　　　　"
+  },
+
+  "calendarDate": {
+    "message": "イベント日"
+  },
+  "calendarName": {
+    "message": "イベント名"
+  },
+  "calendarJsSync": {
+    "message": "同期中..."
+  },
+  "calendarJsNotFound": {
+    "message": "新しいイベントはありませんでした"
+  },
+  "calendarJsFound": {
+    "message": " 件同期完了"
+  }
+}

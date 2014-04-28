@@ -1,0 +1,20 @@
+{
+  "extName": {
+    "message": "K.I.T. AmaLin"
+  },
+  "extDesc":{
+    "message": "Kanazawa Institute Of Technology -Unofficial-"
+  },
+  "amalinStatus0":{
+    "message": "Borrowing"
+  },
+  "amalinStatus1":{
+    "message": "Keeping"
+  },
+  "amalinLocation0":{
+    "message": "LC hasn't this book."
+  },
+  "amalinLocation1":{
+    "message": "LC has this book."
+  }
+}

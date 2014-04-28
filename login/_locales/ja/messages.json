@@ -1,0 +1,43 @@
+{
+  "extName": {
+    "message": "K.I.T. 自動ログイン",
+    "description": "拡張機能名称"
+  },
+  "extDesc": {
+    "message": "金沢工業大学 -非公式-",
+    "description": "拡張機能説明"
+  },
+
+  "optionsTitle": {
+    "message": "設定",
+    "description": "オプションページのタイトル"
+  },
+  "optionsTabPortal": {
+    "message": "ポータル"
+  },
+  "optionsTabVPN": {
+    "message": "VPN"
+  },
+  "optionsLabelStudentId": {
+    "message": "学籍番号"
+  },
+  "optionsLabelPassword": {
+    "message": "パスワード"
+  },
+  "optionsLabelRetypePassword": {
+    "message": "パスワード（確認）"
+  },
+  "optionsLabelPassPhrase": {
+    "message": "パスフレーズ"
+  },
+  "optionsLabelSubmit": {
+    "message": "登録"
+  },
+  "optionsLabelMode": {
+    "message": "モード"
+  },
+
+  "optionsRegistered": {
+    "message": "登録完了"
+  }
+}

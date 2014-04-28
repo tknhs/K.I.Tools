@@ -1,0 +1,107 @@
+{
+  "extName": {
+    "message": "K.I.T. Shuttle Bus"
+  },
+  "extDesc": {
+    "message": "Kanazawa Insutitute Of Technology -Unofficial-"
+  },
+
+  "optionsTitle": {
+    "message": "Settings"
+  },
+  "optionsLabelBusNotify": {
+    "message": "Departure time notification"
+  },
+  "optionsLabelBusNotifySoundVolume": {
+    "message": "Volume of notification"
+  },
+  "optionsLabelBusNotifyMinutesAgo": {
+    "message": "Notification time"
+  },
+  "optionsLabelBusNotifyMinutesAgo2": {
+    "message": "minutes ago"
+  },
+  "optionsLabelDepartureBuilding": {
+    "message": "Departure building"
+  },
+  "optionsSelectOpt1": {
+    "message": "#65 Building"
+  },
+  "optionsSelectOpt2": {
+    "message": "#61 Building"
+  },
+  "optionsSelectOpt3": {
+    "message": "#74 Building"
+  },
+
+  "popupTabBusTime": {
+    "message": "Timetable"
+  },
+  "popupTabBusSchedule": {
+    "message": "Schedule"
+  },
+  "popupTabLocationOhgi": {
+    "message": "DEP. Ohgigaoka"
+  },
+  "popupTabLocationYatsukaho": {
+    "message": "DEP. Yatsukaho"
+  },
+
+  "popupTableNum": {
+    "message": "Number"
+  },
+  "popupTableDeparture": {
+    "message": "DEP. time"
+  },
+  "popupTableMinutes": {
+    "message": "After few minutes"
+  },
+
+  "popupTabDayWeekday": {
+    "message": "Weekday service"
+  },
+  "popupTabDaySunday": {
+    "message": "Out of service"
+  },
+
+  "popupJSSchedule0": {
+    "message": "Timetable on Weekday"
+  },
+  "popupJSSchedule1": {
+    "message": "Timetable on Saturday"
+  },
+  "popupJSSchedule2": {
+    "message": "Timetable on Sunday"
+  },
+  "add": {
+    "message": ""
+  },
+  "popupJSRemainingTime": {
+    "message": " minutes"
+  },
+
+
+  "popupJSServiceStatus0": {
+    "message": "Today is out of service"
+  },
+  "popupJSServiceStatus1": {
+    "message": "Finished the service of today"
+  },
+
+  "last_update": {
+    "message": "Last Updated: "
+  },
+
+  "notifyDeparture": {
+    "message": "Dep: "
+  },
+  "notifyArrive": {
+    "message": " Arr: "
+  },
+  "notifyAfter": {
+    "message": "After "
+  },
+  "notifyMinutes": {
+    "message": " minutes | "
+  }
+}

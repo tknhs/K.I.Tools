@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang='ja'>
+<head>
+  <meta charset='utf-8'>
+  <link href='assets/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+  <link href='assets/css/itoggle.css' rel='stylesheet' type='text/css'>
+  <link href='assets/css/easydropdown.metro.css' rel='stylesheet' type='text/css'>
+  <link href='assets/css/freshstyle.css' rel='stylesheet' type='text/css'>
+  <link href='assets/css/options.css' rel='stylesheet' type='text/css'>
+  <title data-resource='optionsTitle'></title>
+</head>
+<body>
+<div class="container">
+  <div class="row">
+    <section>
+      <div class="col-lg-8 col-lg-offset-2">
+        <div class="page-header">
+          <h2 data-resource='optionsTitle'></h2>
+        </div>
+        <form id="settings_form" method="post" class="form-horizontal">
+          <div class="form-group">
+            <label class='col-lg-5 control-label' data-resource='optionsLabelBusNotify'></label>
+            <div class="col-lg-5">
+              <div class='checkbox'>
+                <label>
+                  <input type='checkbox' name='bus_notify' id='settings_style' class='save iToggle' data-label-on='on' data-label-off='off'>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class='form-group'>
+            <label class='col-lg-5 control-label' data-resource='optionsLabelDepartureBuilding'></label>
+            <div class='col-lg-5'>
+              <select class='save dropdown' name='bus_building' id='settings_style'>
+                <option value='1' class='save' data-resource='optionsSelectOpt1'></option>
+                <option value='2' class='save' data-resource='optionsSelectOpt2'></option>
+                <option value='3' class='save' data-resource='optionsSelectOpt3'></option>
+              </select>
+            </div>
+          </div>
+
+          <div class='form-group'>
+            <label class='col-lg-5 control-label' data-resource='optionsLabelBusNotifySoundVolume'></label>
+            <div class='col-lg-5'>
+              <div class='notify_volume'></div>
+              <input class='save' name='notify_volume' type='hidden'>
+              <button type='button' class='btn btn-success btn-sm' id='play_sound'>♪</button>
+            </div>
+          </div>
+
+          <div class='form-group'>
+            <label class='col-lg-5 control-label' data-resource='optionsLabelBusNotifyMinutesAgo'></label>
+            <div class='col-lg-5'>
+              <input class='save' name='notify_minutes' type='number'>
+              <b data-resource='optionsLabelBusNotifyMinutesAgo2'></b>
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </section>
+  </div>
+</div>
+
+<script src='assets/js/lib/jquery.min.js'></script>
+<script src='assets/js/lib/bootstrap.min.js'></script>
+<script src='assets/js/lib/jquery.DataSaver.js'></script>
+<script src='assets/js/lib/itoggle.jquery.js'></script>
+<script src='assets/js/lib/jquery.easydropdown.js'></script>
+<script src='assets/js/lib/freshslider.1.0.min.js'></script>
+<script src='assets/js/options.js'></script>
+<script src='assets/js/locales.js'></script>
+</body>
+</html>

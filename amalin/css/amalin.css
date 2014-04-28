@@ -1,0 +1,44 @@
+/**
+ *
+ *  Title  : Amazon.co.jp with LINKIT-II
+ *  Author : tknhs
+ *
+ **/
+
+/* amalinで作成したDOM */
+.amalin, .amalin-affi {
+  margin: 10px 0px;
+  font-family:'Lucida Grande', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, メイリオ, sans-serif;
+  font-size: 125%;
+  color: #990012;
+}
+
+/* メインコンテンツ */
+.amalin-content {
+  display:inline;
+  border: none;
+  border-radius: 5px;
+  margin: 0px 50px;
+  padding: 5px 15px;
+  text-align: center;
+  font-size: 110%;
+}
+.amalin-content1 {
+  background-color: #dddddd;
+  color: #006400;
+}
+/* メインコンテンツをホバー */
+.amalin-content1:hover {
+  background-color: #cccccc;
+}
+
+/* 保管・貸出 */
+.amalin-sub {
+  font-size: 80%;
+}
+.amalin-sub1 {
+  color: blue;
+}
+.amalin-sub2 {
+  color: red;
+}
