@@ -19,6 +19,7 @@
 
 ## 使用ライブラリ・プラグイン・素材
 - jQuery             : http://jquery.com/
+- Underscore.js      : http://underscorejs.org/
 - Bootstrap 3        : http://getbootstrap.com/
 - DataSaver          : https://github.com/absentik/DataSaver
 - iToggle            : https://github.com/sebastien-roch/iToggle
