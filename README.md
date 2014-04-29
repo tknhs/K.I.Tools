@@ -1,7 +1,7 @@
 # K.I.Tools
 - KIT学生にとって便利なChrome拡張機能集
 
-## 拡張機能一覧
+## 拡張機能一覧＆ダウンロードリンク
 - **[自動ログイン](https://chrome.google.com/webstore/detail/kit-%E8%87%AA%E5%8B%95%E3%83%AD%E3%82%B0%E3%82%A4%E3%83%B3/dpldfhjnkmhginfhfifinhfgdggdonbm)**
     > 学生ポータル，VPN，給与明細照会，見積依頼に自動ログイン
 
