@@ -41,7 +41,6 @@ function AmazonLinkit(prf, nw){
       $.each(sp.id, function(i) {
         isbn = sp.isbn[i];
         lc = lc_url + isbn;
-        console.log(isbn);
         request(isbn, lc, 1, i, sp);
       });
     }
@@ -79,7 +78,8 @@ function search_page() {
   var d_asin = new Array();
   var cnt = 0;
   for (var i=0; i<rslt.length; i+=1) {
-    if (rslt[i].outerHTML.search('\/dp\/([0-9]+)(X)?') != -1) {
+    if (rslt[i].outerHTML.search('\/dp\/([0-9]+)(X)?') != -1 ||
+        rslt[i].outerHTML.search('\/gp\/offer-listing\/([0-9]+)(X)?') != -1) {
       d_id[cnt] = rslt[i].parentNode.id;
       d_isbn[cnt] = RegExp.$1 + RegExp.$2;
       kindle_asin[i].outerHTML.search('name=\"\([A-Z0-9]+)\"');
