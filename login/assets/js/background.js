@@ -7,7 +7,10 @@
     chrome.tabs.create({url:'chrome-extension://' + chrome.app.getDetails().id + '/options.html'});
   } else if (localStorage['extension_version'] != extension_version){
     // 更新時
+    // id, password, passphraseなどを削除し，再登録のお願い
+    localStorage.clear();
     localStorage['extension_version'] = extension_version;
+    chrome.tabs.create({url: 'chrome-extension://' + chrome.app.getDetails().id + '/notice.html'});
   }
 })();
 
@@ -16,21 +19,17 @@
  **/
 function EncDec(PV) {
   this.pv = PV;
-  var keyword = localStorage[this.pv + 'passPhrase2'];
-  var bits = 1024;
-  this.RSAkey = cryptico.generateRSAKey(keyword, bits);
+  this.keyword = localStorage[this.pv + 'passPhrase2'];
   this.encData;
   this.decData;
 }
 EncDec.prototype.enc = function() {
-  var PublicKeyString = cryptico.publicKeyString(this.RSAkey);
-  var EncryptionResult = cryptico.encrypt(localStorage[this.pv + 'password'], PublicKeyString);
-  this.encData = EncryptionResult.cipher;
+  this.encData = CryptoJS.AES.encrypt(localStorage[this.pv + 'password'], this.keyword);
   return this.encData;
 }
 EncDec.prototype.dec = function() {
-  var DecryptionResult = cryptico.decrypt(localStorage[this.pv + 'encryptPassword'], this.RSAkey);
-  this.decData = DecryptionResult.plaintext;
+  var DecryptionResult = CryptoJS.AES.decrypt(localStorage[this.pv + 'encryptPassword'], this.keyword);
+  this.decData = DecryptionResult.toString(CryptoJS.enc.Utf8);
   return this.decData;
 }
 

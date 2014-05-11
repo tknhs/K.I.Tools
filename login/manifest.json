@@ -1,7 +1,7 @@
 {
   "default_locale": "ja",
   "name": "__MSG_extName__",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "manifest_version": 2,
   "minimum_chrome_version": "22",
   "description": "__MSG_extDesc__",
@@ -28,7 +28,7 @@
 
   "background": {
     "scripts": [
-      "assets/js/lib/cryptico.min.js",
+      "assets/js/lib/aes.js",
       "assets/js/background.js"
     ],
     "persistent": false
