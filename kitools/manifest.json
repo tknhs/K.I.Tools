@@ -1,79 +1,20 @@
 {
-    "name": "K.I.Tools",
-    "version": "1.4.4",
-    "manifest_version": 2,
-    "minimum_chrome_version": "22",
+  "name": "K.I.Tools",
+  "version": "1.5.0",
+  "manifest_version": 2,
 
-    "description": "KIT学生にとって便利なツールを提供します",
-    "homepage_url": "http://kit-shuttle-bus.appspot.com",
-    "icons": {
-      "16": "icon/icon16.png",
-      "48": "icon/icon48.png",
-      "128": "icon/icon128.png"
-    },
-    "content_security_policy": "script-src 'self' https://ssl.google-analytics.com https://apis.google.com; object-src 'self'",
+  "description": "KIT学生にとって便利なツールを提供します",
+  "homepage_url": "https://github.com/tknhs/K.I.Tools",
+  "icons": {
+    "128": "icon/icon128.png"
+  },
 
-    "permissions": [
-      "notifications",
-      "geolocation",
-      "storage",
-      "tabs",
-      "http://www.kanazawa-it.ac.jp/",
-      "http://portal10.mars.kanazawa-it.ac.jp/",
-      "https://ras.kanazawa-it.ac.jp/"
+  "background": {
+    "scripts": [
+      "js/background.js"
     ],
+    "persistent": false
+  },
 
-    "content_scripts": [
-      {
-        "matches": [
-          "http://mars10.mars.kanazawa-it.ac.jp/kyuyo/student",
-          "http://portal10.mars.kanazawa-it.ac.jp/sysportal/StudentLogin?SYS=estimate",
-          "http://portal10.mars.kanazawa-it.ac.jp/portal/student",
-          "https://ras.kanazawa-it.ac.jp/portal/,DanaInfo=portal10.mars.kanazawa-it.ac.jp+student",
-          "https://ras.kanazawa-it.ac.jp/dana-na/auth/url_default/welcome.cgi"
-        ],
-        "js": ["js/lib/cryptico.min.js","js/portal.js"],
-        "run_at": "document_end"
-      },{
-        "matches": [
-          "http://www.amazon.co.jp/*/dp/*",
-          "http://www.amazon.co.jp/dp/*",
-          "http://www.amazon.co.jp/gp/product/*",
-          "http://www.amazon.co.jp/s*",
-          "http://www.amazon.co.jp/exec/*",
-          "http://www.amazon.co.jp/gp/bestsellers/books/*",
-          "http://linkit.kanazawa-it.ac.jp/*"
-        ],
-        "js": ["js/lib/jquery.min.js", "js/amalin.js"],
-        "css": ["css/amalin.css"],
-        "run_at": "document_end"
-      },{
-        "matches": [
-          "https://accounts.google.com/o/oauth2/*"
-        ],
-        "js": ["js/gcalapi.js"],
-        "run_at": "document_end"
-      },{
-        "matches": [
-          "*://*/*"
-        ],
-        "js": ["js/lib/getnowdate.js", "js/busnotify.js"],
-        "run_at": "document_start"
-      }
-    ],
-
-    "browser_action": {
-      "default_icon": "icon/icon38.png",
-      "default_popup": "popup.html"
-    },
-
-    "background": {
-      "scripts": [
-        "js/lib/busdata.js",
-        "js/background.js"
-      ],
-      "persistent": false
-    },
-
-    "options_page": "options.html"
+  "options_page": "options.html"
 }

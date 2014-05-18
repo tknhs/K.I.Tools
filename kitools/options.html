@@ -2,123 +2,27 @@
 <html lang='ja'>
 <head>
   <meta charset='utf-8'>
-  <link href='css/options.css' rel='stylesheet' type='text/css'>
-  <title>設定 - K.I.Tools</title>
+  <title>お知らせ</title>
 </head>
-<body>
-<h1>設定</h1>
-  <div id='tab_menu'>
-    <ul class='tab clear'>
-      <li><a href='#general' class='red' id='tab_general'>一般</a></li>
-      <li><a href='#portal' class='green' id='tab_portal'>ポータル</a></li>
-      <li><a href='#vpn' class='yellow' id='tab_vpn'>VPN</a></li>
-      <li><a href='#bus' class='blue' id='tab_bus'>バス</a></li>
-    </ul>
-  </div>
-  <div id='tab_content' class='tab_content'>
-    <!-- Tab General-->
-    <div id='general' class='page'>
-      <fieldset class='field_general'>
-        <legend>有効化 / 無効化</legend>
-        <br>
-        <label for='edportal'>Portal : </label>
-        <input type='checkbox' name='edportal' id='edportal'>
-        <small>※ 学生ポータル，給与明細照会，見積依頼に自動ログイン</small>
-        <br>
-        <label for='edamalin'>AmaLin : </label>
-        <input type='checkbox' name='edamalin' id='edamalin'>
-        <small>※ LCの書籍所蔵状況を Amazon.co.jp に表示</small>
-        <br>
-        <label for='edvpn'>VPN : </label>
-        <input type='checkbox' name='edvpn' id='edvpn'>
-        <small>※ VPN に自動ログイン</small>
-        <br>
-        <label for='edbus'>Bus : </label>
-        <input type='checkbox' name='edbus' id='edbus'>
-        <small>※ シャトルバス時刻通知（β）</small>
-        <br>
-        <label></label>
-        <button id='general_save'>保存</button>
-        <button id='general_delete' disabled='disbaled'>リセット</button>
-        <b id='g_registered'></b>
-      </fieldset>
-    </div>
-
-    <!-- Tab Portal -->
-    <div id='portal' class='page'>
-      <fieldset class='registered'>
-        <legend>登録状況</legend>
-        <p id='p_registered'></p>
-      </fieldset>
-      <br>
-      <fieldset class='field_portal'>
-        <legend>登録 / 変更</legend>
-        <br>
-        <label for='kit-id'>学籍番号 : </label>
-        <input type='text' id='kit-id' name='kit-id' placeholder='1234567'>
-        <br>
-        <label for='kit-pass'>パスワード : </label>
-        <input type='password' id='kit-pass' name='kit-pass' placeholder='h030519'>
-        <br>
-        <label></label>
-        <button id='portal_save'>保存</button>
-        <button id='portal_delete'>削除</button>
-      </fieldset>
-    </div>
-
-    <!-- Tab VPN -->
-    <div id='vpn' class='page'>
-      <fieldset class='registered'>
-        <legend>登録状況</legend>
-        <p id='v_registered'></p>
-      </fieldset>
-      <br>
-      <fieldset class='field_vpn'>
-        <legend>登録 / 変更</legend>
-        <br>
-        <label for='vpn-id'>ユーザ ID : </label>
-        <input type='text' id='vpn-id' name='vpn-id' placeholder='a1234567'>
-        <br>
-        <label for='vpn-pass'>パスワード : </label>
-        <input type='password' id='vpn-pass' name='vpn-pass' placeholder='h030519'>
-        <br>
-        <label for='vpn-mode'>モード : </label>
-        <input type='radio' name='vpn-radio' value='Web' checked><small>Web</small>
-        <input type='radio' name='vpn-radio' value='NetworkConnect'><small>NetworkConnect</small>
-        <br>
-        <label></label>
-        <button id='vpn_save'>保存</button>
-        <button id='vpn_delete'>削除</button>
-      </fieldset>
-    </div>
-
-    <!-- Tab Bus -->
-    <div id='bus' class='page'>
-      <fieldset class='registered'>
-        <legend>登録状況</legend>
-        <p id='b_registered'></p>
-      </fieldset>
-      <br>
-      <fieldset class='field_bus'>
-        <legend>登録 / 変更</legend>
-        <br>
-        <label for='building'>出発号館 : </label>
-        <select name='from_yatsukaho'>
-          <option name='fy' value='1'>65号館</option>
-          <option name='fy' value='2'>61号館</option>
-          <option name='fy' value='3'>74号館</option>
-        </select>
-        <small>※ やつかほ から乗車の際に普段利用する号館</small>
-        <br>
-        <label></label>
-        <button id='bus_save'>保存</button>
-      </fieldset>
-    </div>
-  </div>
-
-  <script src='js/lib/cryptico.min.js'></script>
-  <script src='js/lib/tab.js'></script>
-  <script src='js/options.js'></script>
+<body style='text-align: center'>
+<h1>（重要）K.I.Tools をご利用中の皆さまへ</h1>
+平素はChrome拡張機能「K.I.Tools」をご利用いただき，誠にありがとうございます．<br>
+<br>
+この度は，Chrome Web Storeの規約変更により，<br>
+「K.I.Tools」の持つ機能をそれぞれの機能ごとにリリースすることになりました．<br>
+<br>
+<small>
+規約変更内容 -&gt; <a href='http://blog.chromium.org/2013/12/keeping-chrome-extensions-simple.html' target='_new'>Chromium Blog: Keeping Chrome Extensions Simple</a>
+</small>
+<br>
+<br>
+すでに「K.I.Tools」の持つ機能すべてをリリースしておりますので，<br>
+お手数ですが必要な拡張機能をインストールしてください．<br>
+<br>
+<big>
+<a href='https://github.com/tknhs/K.I.Tools/blob/master/README.md' target='_new'>拡張機能一覧・インストールページ</a>
+</big>
+<br>
+<img src='/icon/extensions.png'><br>
 </body>
 </html>
-
