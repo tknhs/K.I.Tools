@@ -26,6 +26,11 @@ function AmazonLinkit(prf, nw){
     else if (local_url.search('/(dp|gp|exec\/obidos\/ASIN)(\/product)?\/([A-Z0-9]+)') != -1) {
       /* a book page (kindle) */
       var format = $('div.cBox.dkBlueBox table tbody');
+
+      // 本かどうかチェック（kindle版があるか）
+      var include = _.include(format, $('tbody#kindle_meta_binding_winner')[0]);
+      if (!include) return;
+
       for (var i=0; i<format.length; i+=1) {
         if (format[i].id != 'kindle_meta_binding_winner') {
           var isbn = format[i].firstElementChild.id;
