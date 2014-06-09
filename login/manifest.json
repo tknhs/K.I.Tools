@@ -1,7 +1,7 @@
 {
   "default_locale": "ja",
   "name": "__MSG_extName__",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "manifest_version": 2,
   "minimum_chrome_version": "22",
   "description": "__MSG_extDesc__",
@@ -19,6 +19,7 @@
         "http://portal10.mars.kanazawa-it.ac.jp/sysportal/StudentLogin?SYS=estimate",
         "http://portal10.mars.kanazawa-it.ac.jp/portal/student",
         "https://ras.kanazawa-it.ac.jp/portal/,DanaInfo=portal10.mars.kanazawa-it.ac.jp+student",
+        "https://ras.kanazawa-it.ac.jp/sysportal/,DanaInfo=portal10.mars.kanazawa-it.ac.jp+StudentLogin?SYS=estimate",
         "https://ras.kanazawa-it.ac.jp/dana-na/auth/url_default/welcome.cgi"
       ],
       "js": ["assets/js/portal.js"],

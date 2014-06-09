@@ -8,9 +8,9 @@
   } else if (localStorage['extension_version'] != extension_version){
     // 更新時
     // id, password, passphraseなどを削除し，再登録のお願い
-    localStorage.clear();
-    localStorage['extension_version'] = extension_version;
-    chrome.tabs.create({url: 'chrome-extension://' + chrome.app.getDetails().id + '/notice.html'});
+    //localStorage.clear();
+    //localStorage['extension_version'] = extension_version;
+    //chrome.tabs.create({url: 'chrome-extension://' + chrome.app.getDetails().id + '/notice.html'});
   }
 })();
 
