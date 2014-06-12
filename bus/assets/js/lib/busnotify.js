@@ -39,20 +39,26 @@ var BusNotification = {
             var bus_min = bus[i][arrival_id].split(':');
             var bus_time = Number(bus_min[0])*60 + Number(bus_min[1]);
             if (bus_time - _time == localStorage['notify_minutes']) {
-              // 通知
+              // 通知作成・通知音設定
               var audio = new Audio('assets/sound/Crrect_answer3.mp3');
               audio.volume = localStorage['notify_volume'];
-              var notify = webkitNotifications.createNotification(
-                my_img,
-                disp_location,
-                chrome.i18n.getMessage('notifyAfter') + localStorage['notify_minutes'] + chrome.i18n.getMessage('notifyMinutes') +
-                chrome.i18n.getMessage('notifyDeparture') + bus[i][arrival_id] +
-                chrome.i18n.getMessage('notifyArrive') + bus[i][departure_id]
-              );
-              audio.play();
-              notify.show();
-              notify.onclick = function() { notify.cancel(); }
-              setTimeout(function(){ notify.cancel(); }, 10*1000);
+              if (Notification.permission === 'granted') {
+                audio.play();
+                var notify = new Notification(
+                    disp_location, {
+                      icon: my_img,
+                      body: chrome.i18n.getMessage('notifyAfter') + localStorage['notify_minutes'] +
+                            chrome.i18n.getMessage('notifyMinutes') +
+                            chrome.i18n.getMessage('notifyDeparture') + bus[i][arrival_id] +
+                            chrome.i18n.getMessage('notifyArrive') + bus[i][departure_id]
+                });
+                notify.onshow = function() {
+                  setTimeout(function() { notify.close(); }, 60*1000);
+                }
+                notify.onclick = function() {
+                  notify.close();
+                }
+              }
               break;
             }
           }
