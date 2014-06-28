@@ -12,7 +12,6 @@ for (var i=0; i<kokuchiList.length; i++) {
   data.search('(display_subject)\\(([0-9]+)');
   var subject = RegExp.$1;
   var number = RegExp.$2;
-  console.log(subject + ' ' + number);
 
   // 非表示ボタンを作成
   var noDisplayBtn = document.createElement('button');
@@ -26,7 +25,6 @@ for (var i=0; i<kokuchiList.length; i++) {
   // 非表示データを非表示にする
   for (var n=0; n<ndcnList.length; n++) {
     if (subject == ndcnList[n][0] && number == ndcnList[n][1]) {
-      console.log('ok');
       kokuchiList[i].parentNode.removeChild(kokuchiList[i]);
       i--;
     }
