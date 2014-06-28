@@ -15,7 +15,6 @@ function portalVpn(Portal_or_VPN) {
   var pv = Portal_or_VPN;
   chrome.extension.sendMessage({ ed: ed, pv: pv }, function(response) {
     var loginInfo = [response.id, response.password, response.mode];
-    console.log(page[pv]);
     page[pv](loginInfo);
   });
 }
