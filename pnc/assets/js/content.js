@@ -31,6 +31,39 @@ for (var i=0; i<kokuchiList.length; i++) {
   }
 }
 
+// 学科連絡
+var gakkaKokuchi = document.getElementsByClassName('data-g')[0];
+var kokuchiList = gakkaKokuchi.getElementsByTagName('li');
+var gakkaAccordion = document.createElement('div');
+gakkaAccordion.setAttribute('class', 'pnc_menu');
+
+for (var i=0; i<kokuchiList.length; i++) {
+  var gakkaSplit = kokuchiList[i].innerHTML.search('\<br\>');
+  var gakkaTitle = kokuchiList[i].innerHTML.slice(0, gakkaSplit);
+  var gakkaBody = kokuchiList[i].innerHTML.slice(gakkaSplit);
+
+  var gakkaLabel = document.createElement('label');
+  gakkaLabel.setAttribute('class', 'pnc_label');
+  gakkaLabel.setAttribute('for', 'pnc_panel' + i);
+  gakkaLabel.innerHTML = gakkaTitle;
+  var gakkaInput = document.createElement('input');
+  gakkaInput.setAttribute('type', 'checkbox');
+  gakkaInput.setAttribute('id', 'pnc_panel' + i);
+  gakkaInput.setAttribute('class', 'pnc_on-off');
+  var gakkaUl = document.createElement('ul');
+  var gakkaLi = document.createElement('li');
+  gakkaLi.innerHTML = gakkaBody;
+
+  // アコーディオン要素作成
+  gakkaUl.appendChild(gakkaLi);
+  gakkaAccordion.appendChild(gakkaLabel);
+  gakkaAccordion.appendChild(gakkaInput);
+  gakkaAccordion.appendChild(gakkaUl);
+}
+
+gakkaKokuchi.removeChild(gakkaKokuchi.childNodes[1]);
+gakkaKokuchi.appendChild(gakkaAccordion);
+
 // クリックイベント
 document.addEventListener('click', function(e) {
   var target = e.target;

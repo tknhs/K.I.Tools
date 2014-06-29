@@ -1,6 +1,6 @@
 {
   "name": "K.I.T. ポータル告知クリーナー",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "manifest_version": 2,
   "minimum_chrome_version": "22",
   "description": "金沢工業大学 -非公式-",
@@ -22,6 +22,7 @@
         "https://ras.kanazawa-it.ac.jp/portal/,DanaInfo=portal10.mars.kanazawa-it.ac.jp+student"
       ],
       "js": ["assets/js/content.js"],
+      "css": ["assets/css/content.css"],
       "run_at": "document_end"
     }
   ]
