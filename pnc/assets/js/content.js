@@ -3,6 +3,7 @@ if (localStorage['noDisplayCommonNotice'] === undefined) {
   localStorage['noDisplayCommonNotice'] = JSON.stringify(new Array());
 }
 
+// 共通告知
 var ndcnList = JSON.parse(localStorage['noDisplayCommonNotice']);
 var commonKokuchi = document.getElementsByClassName('kokuchi')[0];
 var kokuchiList = commonKokuchi.getElementsByTagName('li');
@@ -25,8 +26,7 @@ for (var i=0; i<kokuchiList.length; i++) {
   // 非表示データを非表示にする
   for (var n=0; n<ndcnList.length; n++) {
     if (subject == ndcnList[n][0] && number == ndcnList[n][1]) {
-      kokuchiList[i].parentNode.removeChild(kokuchiList[i]);
-      i--;
+      kokuchiList[i].style.display = 'none';
     }
   }
 }
@@ -44,6 +44,6 @@ document.addEventListener('click', function(e) {
 
     // 対象のDOMを削除
     var rmNode = target.parentNode;
-    rmNode.parentNode.removeChild(rmNode);
+    rmNode.style.display = 'none';
   }
 }, false);
