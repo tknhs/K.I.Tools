@@ -17,7 +17,7 @@ for (var i=0; i<kokuchiList.length; i++) {
   // 非表示ボタンを作成
   var noDisplayBtn = document.createElement('button');
   noDisplayBtn.setAttribute('id', subject + ':' + number);
-  noDisplayBtn.setAttribute('class', 'pnc');
+  noDisplayBtn.setAttribute('class', 'pnc_common-kokuchi');
   noDisplayBtn.innerText = '非表示';
 
   // 非表示ボタン追加
@@ -67,7 +67,7 @@ gakkaKokuchi.appendChild(gakkaAccordion);
 // クリックイベント
 document.addEventListener('click', function(e) {
   var target = e.target;
-  if (target.tagName == 'BUTTON' && target.className == 'pnc') {
+  if (target.tagName == 'BUTTON' && target.className == 'pnc_common-kokuchi') {
     var data = target.id.split(':');
 
     // 非表示データを追加
