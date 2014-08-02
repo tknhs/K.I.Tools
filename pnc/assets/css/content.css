@@ -1,10 +1,10 @@
 /* 共通告知 */
-button.pnc_common-kokuchi {
+button.pnc_common-kokuchi, button.pnc-delete {
   border-radius: 5px;
   background: #e6e6e6;
   padding: 2px 10px 2px 10px;
 }
-button.pnc_common-kokuchi:hover {
+button.pnc_common-kokuchi:hover, button.pnc-delete:hover {
   background: #adadad;
 }
 
