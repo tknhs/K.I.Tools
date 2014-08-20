@@ -2,7 +2,7 @@
 - KIT学生にとって便利なChrome拡張機能集
 
 ## 拡張機能一覧＆ダウンロードリンク
-- *new* **[ポータル告知クリーナー](https://chrome.google.com/webstore/detail/kit-%E3%83%9D%E3%83%BC%E3%82%BF%E3%83%AB%E5%91%8A%E7%9F%A5%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%8A%E3%83%BC/hangclldeokkmileehoedlaimolonoed)**
+- **[ポータル告知クリーナー](https://chrome.google.com/webstore/detail/kit-%E3%83%9D%E3%83%BC%E3%82%BF%E3%83%AB%E5%91%8A%E7%9F%A5%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%8A%E3%83%BC/hangclldeokkmileehoedlaimolonoed)**
     > ポータルの告知を自分好みに取捨選択
 
 - **[自動ログイン](https://chrome.google.com/webstore/detail/kit-%E8%87%AA%E5%8B%95%E3%83%AD%E3%82%B0%E3%82%A4%E3%83%B3/dpldfhjnkmhginfhfifinhfgdggdonbm)**
