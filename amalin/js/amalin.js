@@ -134,16 +134,8 @@ function request(isbn, lc, whichreq, repeat, srch, type) {
         var i = 0;
         var nodelist = $('.buying');
         if (book_type == 'paper') {
-          for (var nl = 0; nl < nodelist.length; nl++) {
-            if (nodelist[nl].id == '') {
-              i++;
-              if (i == 2) {
-                nodelist[nl].parentNode.insertBefore(ele, nodelist[nl]);
-              }
-            }
-          }
-        }
-        else if (book_type == 'kindle') {
+          $('ul.a-nostyle.a-button-list.a-horizontal').prepend(ele);
+        } else if (book_type == 'kindle') {
           $('div.buying#priceBlock').prepend(ele);
         }
       }
