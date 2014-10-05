@@ -5,11 +5,10 @@
  *
  **/
 
-function AmazonLinkit(prf, nw){
-  if (prf == nw){
+function AmazonLinkit(prf, nw) {
+  if (prf == nw) {
     nw = location.href + location.search;
-  }
-  else{
+  } else {
     prf = location.href + location.search;
     nw  = location.href + location.search;
     var local_url = location.pathname;
@@ -120,13 +119,31 @@ function request(isbn, lc, whichreq, repeat, srch, type) {
       var book = linkit.getElementsByTagName('a')[1];
 
       // LC have this Book.
-      var ele = document.createElement('div');
-      ele.setAttribute('class', 'amalin');
-      ele.innerHTML = (
-          (book == null)
-          ? '<div class="amalin-content amalin-content0">'+chrome.i18n.getMessage('amalinLocation0')+'</div>'
-          : '<a href='+lc+' target="_blank" style="text-decoration: none;"><div class="amalin-content amalin-content1">'+chrome.i18n.getMessage('amalinLocation1')+' '+lend+'</div></a>'
-      );
+      var ele = $('<div>', {class: 'amalin'});
+      if (book == null) {
+        ele.html('<div class="amalin-content amalin-content0">'+chrome.i18n.getMessage('amalinLocation0')+'</div>');
+      } else {
+        ele.html('<a href='+lc+' target="_blank" style="text-decoration: none;"><div class="amalin-content amalin-content1">'+chrome.i18n.getMessage('amalinLocation1')+' '+lend+'</div></a>');
+
+        // Check this book is entering "Borrow It Later"
+        var book_title = book.text.split('/')[0].replace(/\s+/g, '');
+        var is_enter;
+        var borrow_checker = function(title, isbn) {
+          var defer = $.Deferred();
+          var book = JSON.stringify([title, isbn]);
+          chrome.storage.sync.get(function(data) {
+            var data = _.map(data.amalin, function(x) {return JSON.stringify(x)});
+            is_enter = ($.inArray(book, data) == -1) ? false : true;
+            defer.resolve();
+          });
+          return defer.promise();
+        }
+        var promise = borrow_checker(book_title, isbn);
+        promise.done(function() {
+          var ele_bil = borrow_it_later(book_title, isbn, is_enter);
+          ele.append(ele_bil);
+        });
+      }
 
       // which request?
       if (wr == 0) {

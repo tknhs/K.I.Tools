@@ -16,5 +16,14 @@
   },
   "amalinLocation1":{
     "message": "LC has this book."
+  },
+  "amalinBorrowItLaterAlready": {
+    "message": "Borrow It Later: Already"
+  },
+  "amalinBorrowItLaterYet": {
+    "message": "Borrow It Later: Yet"
+  },
+  "amalinBorrowItLaterSlider": {
+    "message": "Delete"
   }
 }

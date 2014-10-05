@@ -16,5 +16,14 @@
   },
   "amalinLocation1": {
     "message": "LCに所蔵されています"
+  },
+  "amalinBorrowItLaterAlready": {
+    "message": "あとで借りる: 済"
+  },
+  "amalinBorrowItLaterYet": {
+    "message": "あとで借りる: 未"
+  },
+  "amalinBorrowItLaterSlider": {
+    "message": "削除"
   }
 }

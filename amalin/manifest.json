@@ -1,7 +1,7 @@
 {
   "default_locale":"ja",
   "name": "__MSG_extName__",
-  "version": "0.1.3",
+  "version": "0.2.0",
   "manifest_version": 2,
 
   "description": "__MSG_extDesc__",
@@ -9,6 +9,10 @@
   "icons": {
     "128": "icon/icon128.png"
   },
+
+  "permissions": [
+    "storage"
+  ],
 
   "content_scripts": [
     {
@@ -21,8 +25,9 @@
         "http://www.amazon.co.jp/gp/bestsellers/books/*",
         "http://linkit.kanazawa-it.ac.jp/*"
       ],
-      "js": ["js/lib/jquery.min.js", "js/lib/underscore.min.js", "js/amalin.js"],
-      "css": ["css/amalin.css"],
+      "js": ["js/lib/jquery.min.js", "js/lib/slidebars.js", "js/lib/underscore.min.js",
+              "js/borrow_it_later.js", "js/amalin.js"],
+      "css": ["css/lib/slidebars.css", "css/amalin.css"],
       "run_at": "document_end"
     }
   ]
