@@ -31,4 +31,5 @@
 - BootstrapValidator : https://github.com/nghuuphuoc/bootstrapvalidator
 - Fresh Slider JS    : https://github.com/tuanchauict/freshsliderjs
 - CryptoJS           : https://code.google.com/p/crypto-js/
+- Slidebars          : https://github.com/adchsm/Slidebars
 - 小森平の使い方     : http://taira-komori.jpn.org/
