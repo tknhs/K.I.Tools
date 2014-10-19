@@ -2,9 +2,11 @@
 button.pnc_common-kokuchi, button.pnc-delete, button.pnc_common-kokuchi-display {
   border-radius: 5px;
   background: #e6e6e6;
-  padding: 2px 10px 2px 10px;
+  padding: 2px 5px 2px 5px;
+  margin-right: 5px;
+  cursor: pointer;
 }
-button.pnc_common-kokuchi:hover, button.pnc-delete:hover, button.pnc_common-kokuchi-display {
+button.pnc_common-kokuchi:hover, button.pnc-delete:hover, button.pnc_common-kokuchi-display:hover {
   background: #adadad;
 }
 
@@ -15,6 +17,7 @@ label.pnc_label {
   display: block;
   margin: 1;
   border: 1px solid #000;
+  cursor: pointer;
 }
 
 input[type="checkbox"].pnc_on-off{
