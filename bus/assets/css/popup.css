@@ -74,6 +74,9 @@ th, tr {
   min-width: 100px;
   padding: 5px;
 }
+tr.bus_now {
+  background-color: #ffcc00;
+}
 ul#bus_weekday {
   margin: 0px;
   padding: 10px;

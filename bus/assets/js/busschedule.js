@@ -77,23 +77,30 @@ function ins_bus_time(tt, wh, time) {
       var now_sm = _time.split(':');
       now_sm = Number(now_sm[0])*60 + Number(now_sm[1]);
       var remain_time = bus_sm - now_sm;
+      var bus_now_class = ''; // 出発が一番近いバスの時刻表に付加するクラス
       if (remain_time > 0) {
         bus_end+=1;
         if (bus_end == 1) {
           document.getElementById(terminal_remain_time[two_way]).innerText = remain_time + chrome.i18n.getMessage('popupJSRemainingTime');
+          bus_now_class = 'bus_now';
         }
-        var tr = document.createElement('tr');
-        var bus_name = document.createElement('td');
-        bus_name.innerText = way[i][0];
-        var bus_departure = document.createElement('td');
-        bus_departure.innerText = way[i][building_id];
-        var bus_remain = document.createElement('td');
-        bus_remain.innerText = remain_time;
-        tr.appendChild(bus_name);
-        tr.appendChild(bus_departure);
-        tr.appendChild(bus_remain);
-        way_time.appendChild(tr);
+      } else {
+        // 定刻を過ぎたバス
+        remain_time = '----';
       }
+      // タイムテーブル追加
+      var tr = document.createElement('tr');
+      tr.className = bus_now_class;
+      var bus_name = document.createElement('td');
+      bus_name.innerText = way[i][0];
+      var bus_departure = document.createElement('td');
+      bus_departure.innerText = way[i][building_id];
+      var bus_remain = document.createElement('td');
+      bus_remain.innerText = remain_time;
+      tr.appendChild(bus_name);
+      tr.appendChild(bus_departure);
+      tr.appendChild(bus_remain);
+      way_time.appendChild(tr);
     }
     if (bus_end == 0) {
       document.getElementById(terminal_remain_time[two_way]).innerText = chrome.i18n.getMessage('popupJSServiceStatus1');
