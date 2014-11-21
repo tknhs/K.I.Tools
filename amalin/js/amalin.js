@@ -75,19 +75,33 @@ function bestsellers_page() {
 }
 
 function search_page() {
-  var kindle_asin = $('div[id^=result_]');
-  var rslt = $('div[id^=result_] ul.rsltGridList.grey');
+  /**
+   * 検索ページにある本を調べる
+   * --------------------------
+   * 返り値
+   *    d_id: 正しい位置にエレメントを挿入する用
+   *    d_isbn: LC にあるかチェックする用
+   *    d_asin: 正しい位置にエレメントを挿入する用
+   **/
+  var rslt_base = $('li[id^=result_]');
   var d_id = new Array();
   var d_isbn = new Array();
   var d_asin = new Array();
   var cnt = 0;
-  for (var i=0; i<rslt.length; i+=1) {
-    if (rslt[i].outerHTML.search('\/dp\/([0-9]+)(X)?') != -1 ||
-        rslt[i].outerHTML.search('\/gp\/offer-listing\/([0-9]+)(X)?') != -1) {
-      d_id[cnt] = rslt[i].parentNode.id;
+  var result_id;
+  var paper_books;
+  var array_format = ['大型本', 'ペーパーバック', 'ハードカバー',
+                      '単行本（ソフトカバー）', '単行本', '新書', 'Perfect'];
+  for (var i=0; i<rslt_base.length; i+=1) {
+    result_id = rslt_base[i].id;
+    paper_books = $('li#' + result_id + ' a.a-link-normal.a-text-normal').filter(function() {
+      return ($.inArray(this.title, array_format) !== -1);
+    });
+    if (paper_books.length !== 0) {
+      d_id[cnt] = result_id;
+      paper_books[0].outerHTML.search('\/dp\/([A-Z0-9]+)(X)?|\/gp\/offer-listing\/([A-Z0-9]+)(X)?') != -1;
       d_isbn[cnt] = RegExp.$1 + RegExp.$2;
-      kindle_asin[i].outerHTML.search('name=\"\([A-Z0-9]+)\"');
-      d_asin[cnt] = RegExp.$1;
+      d_asin[cnt] = $('li#' + result_id).attr('data-asin');
       cnt += 1;
     }
   }
@@ -158,9 +172,10 @@ function request(isbn, lc, whichreq, repeat, srch, type) {
       }
       else if (wr == 1) {
         /* search result page */
-        if ($('#'+sp.id[rep]).attr('name') == sp.asin[rep]) {
-          // asinコードが一致しているか
-          $('#'+sp.id[rep]+' h3.newaps').append(ele);
+        var target_asin = $('#'+sp.id[rep]).attr('data-asin');
+        if (target_asin === sp.asin[rep]) {
+          // isbn が一致しているか
+          $('#'+sp.id[rep]+' div.a-row.a-spacing-base').next().append(ele);
         }
       }
       else if (wr == 2) {
