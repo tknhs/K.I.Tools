@@ -74,23 +74,23 @@ function borrow_insert(title, isbn) {
    * Insert the Borrow Data to Slidebar
    **/
   var ama_url = 'http://www.amazon.co.jp/dp/' + isbn;
-  var lin_url = 'http://linkit.kanazawa-it.ac.jp/opac/cgi/searchS.cgi?AC=1&SC=F&RI10=IB&SW10=' + isbn;
+  //var lin_url = 'http://linkit.kanazawa-it.ac.jp/opac/cgi/searchS.cgi?AC=1&SC=F&RI10=IB&SW10=' + isbn;
 
-  var xhr = new XMLHttpRequest();
-  xhr.open('GET', lin_url, true);
-  xhr.onreadystatechange = function() {
-    if (xhr.readyState == 4 && xhr.status == 200) {
+  //var xhr = new XMLHttpRequest();
+  //xhr.open('GET', lin_url, true);
+  //xhr.onreadystatechange = function() {
+  //  if (xhr.readyState == 4 && xhr.status == 200) {
       var ele = $('<div>', {class: 'amalin-bil-div'});
 
-      var ele_lend;
-      if (xhr.responseText.search('保管') != -1) {
-        var ele_lend = $('<button>', {class: 'amalin-bil-lend amalin-bil-lend-1'});
-        ele_lend.text(chrome.i18n.getMessage('amalinStatus1'));
-      } else {
-        var ele_lend = $('<button>', {class: 'amalin-bil-lend amalin-bil-lend-0'});
-        ele_lend.text(chrome.i18n.getMessage('amalinStatus0'));
-      }
- 
+  //    var ele_lend;
+  //    if (xhr.responseText.search('保管') != -1) {
+  //      var ele_lend = $('<button>', {class: 'amalin-bil-lend amalin-bil-lend-1'});
+  //      ele_lend.text(chrome.i18n.getMessage('amalinStatus1'));
+  //    } else {
+  //      var ele_lend = $('<button>', {class: 'amalin-bil-lend amalin-bil-lend-0'});
+  //      ele_lend.text(chrome.i18n.getMessage('amalinStatus0'));
+  //    }
+
       var ele_delete = $('<button>', {class: 'amalin-borrow-it-later-delete'});
       ele_delete.attr('amalin.title', title);
       ele_delete.attr('amalin.isbn', isbn);
@@ -102,14 +102,14 @@ function borrow_insert(title, isbn) {
       ele_book.text(title);
 
       $(ele).append(ele_delete);
-      $(ele).append(ele_lend);
+  //    $(ele).append(ele_lend);
       $(ele).append($('<br>'));
       $(ele).append(ele_book);
       $(ele).append($('<hr>'));
       $('#amalin-bil').append(ele);
-    }
-  }
-  xhr.send();
+  //  }
+  //}
+  //xhr.send();
 }
 
 function borrow_refresh() {
@@ -121,7 +121,7 @@ function borrow_refresh() {
   chrome.storage.sync.get(function(data) {
     $('#sb-slidebar').text(data.amalin.length);
 
-    $.each(data.amalin, function(i, val) {
+    $.each(data.amalin.reverse(), function(i, val) {
       borrow_insert(val[0], val[1]);
     });
   });
