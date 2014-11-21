@@ -48,7 +48,7 @@ function AmazonLinkit(prf, nw) {
         request(isbn, lc, 1, i, sp);
       });
     }
-    if (local_url.search('/gp/bestsellers/books/') != -1) {
+    if (local_url.search('/gp/bestsellers/books') != -1) {
       /* bestsellers page */
       var isbns = bestsellers_page();
       $.each(isbns, function(i) {
@@ -180,8 +180,8 @@ function request(isbn, lc, whichreq, repeat, srch, type) {
       }
       else if (wr == 2) {
         /* bestsellers page */
-        var parent_ele = document.getElementsByClassName('zg_itemRightDiv_normal')[rep];
-        parent_ele.insertBefore(ele, parent_ele.children[3]);
+        var parent_ele = $('.zg_itemRightDiv_normal')[rep];
+        $($(parent_ele).children()[0]).append(ele);
       }
     }
   }
